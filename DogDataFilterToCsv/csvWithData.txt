@@ -1,0 +1,6 @@
+id,name,age
+1,slim,4
+2,spike,3
+3,mamacat,4
+4,babycat,2
+5,miko,3
