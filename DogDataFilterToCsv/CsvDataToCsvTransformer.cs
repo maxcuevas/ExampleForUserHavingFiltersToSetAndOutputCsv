@@ -32,16 +32,18 @@ namespace DogDataFilterToCsv
 
         private string getCsvRow(csvWithData csvData)
         {
-            var csvDataList = new List<string>();
-            csvDataList.Add(csvData.id.ToString());
-            csvDataList.Add(csvData.name.ToString());
-            csvDataList.Add(csvData.tail_high.ToString());
-            csvDataList.Add(csvData.tail_low.ToString());
-            csvDataList.Add(csvData.ear_high.ToString());
-            csvDataList.Add(csvData.ear_low.ToString());
-            csvDataList.Add(csvData.nose_high.ToString());
-            csvDataList.Add(csvData.nose_low.ToString());
-            csvDataList.Add(csvData.time_stamp.ToString());
+            var csvDataList = new List<string>
+            {
+                csvData.id.ToString(),
+                csvData.name.ToString(),
+                csvData.tail_high.ToString(),
+                csvData.tail_low.ToString(),
+                csvData.ear_high.ToString(),
+                csvData.ear_low.ToString(),
+                csvData.nose_high.ToString(),
+                csvData.nose_low.ToString(),
+                csvData.time_stamp.ToString()
+            };
             return String.Join(",", csvDataList);
         }
 

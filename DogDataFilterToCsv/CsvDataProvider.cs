@@ -3,8 +3,6 @@ using DogDataFilterToCsv.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace DogDataFilterToCsv
 {
@@ -23,7 +21,8 @@ namespace DogDataFilterToCsv
             string earHighLessThanThis, string earHighGreaterThanThis,
             string earLowLessThanThis, string earLowGreaterThanThis,
             string noseHighLessThanThis, string noseHighGreaterThanThis,
-            string noseLowLessThanThis, string noseLowGreaterThanThis)
+            string noseLowLessThanThis, string noseLowGreaterThanThis,
+            DateTime dateLessThanThis, DateTime dateGreaterThanThis)
         {
             var dbContext = new Model1();
             var builder = new Builder();
@@ -35,6 +34,7 @@ namespace DogDataFilterToCsv
             csvData = builder.earLowFilter(csvData, earLowLessThanThis, earLowGreaterThanThis);
             csvData = builder.noseHighFilter(csvData, noseHighLessThanThis, noseHighGreaterThanThis);
             csvData = builder.noseLowFilter(csvData, noseLowLessThanThis, noseLowGreaterThanThis);
+            csvData = builder.DateFilter(csvData, dateLessThanThis,dateGreaterThanThis);
             return csvData.ToList();
         }
     }

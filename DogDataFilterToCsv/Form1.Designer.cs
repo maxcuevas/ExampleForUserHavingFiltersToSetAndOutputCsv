@@ -61,8 +61,8 @@
             this.NoseLowGreaterThanThisTextBox = new System.Windows.Forms.TextBox();
             this.DateLessThanThisLabel = new System.Windows.Forms.Label();
             this.DateGreaterThanThisLabel = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.DateGreaterThanThisDatePicker = new System.Windows.Forms.DateTimePicker();
+            this.DateLessThanThisDatePicker = new System.Windows.Forms.DateTimePicker();
             this.TableRowCountTextBox = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -350,19 +350,19 @@
             this.DateGreaterThanThisLabel.TabIndex = 32;
             this.DateGreaterThanThisLabel.Text = "Date Greater Than This: ";
             // 
-            // dateTimePicker1
+            // DateGreaterThanThisDatePicker
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(138, 221);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker1.TabIndex = 35;
+            this.DateGreaterThanThisDatePicker.Location = new System.Drawing.Point(138, 221);
+            this.DateGreaterThanThisDatePicker.Name = "DateGreaterThanThisDatePicker";
+            this.DateGreaterThanThisDatePicker.Size = new System.Drawing.Size(200, 20);
+            this.DateGreaterThanThisDatePicker.TabIndex = 35;
             // 
-            // dateTimePicker2
+            // DateLessThanThisDatePicker
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(138, 247);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker2.TabIndex = 36;
+            this.DateLessThanThisDatePicker.Location = new System.Drawing.Point(138, 247);
+            this.DateLessThanThisDatePicker.Name = "DateLessThanThisDatePicker";
+            this.DateLessThanThisDatePicker.Size = new System.Drawing.Size(200, 20);
+            this.DateLessThanThisDatePicker.TabIndex = 36;
             // 
             // TableRowCountTextBox
             // 
@@ -382,8 +382,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1225, 396);
             this.Controls.Add(this.TableRowCountTextBox);
-            this.Controls.Add(this.dateTimePicker2);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.DateLessThanThisDatePicker);
+            this.Controls.Add(this.DateGreaterThanThisDatePicker);
             this.Controls.Add(this.DateLessThanThisLabel);
             this.Controls.Add(this.DateGreaterThanThisLabel);
             this.Controls.Add(this.NoseLowLessThanThisTextBox);
@@ -460,8 +460,8 @@
         private System.Windows.Forms.TextBox NoseLowGreaterThanThisTextBox;
         private System.Windows.Forms.Label DateLessThanThisLabel;
         private System.Windows.Forms.Label DateGreaterThanThisLabel;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.DateTimePicker DateGreaterThanThisDatePicker;
+        private System.Windows.Forms.DateTimePicker DateLessThanThisDatePicker;
         private System.Windows.Forms.TextBox TableRowCountTextBox;
     }
 }

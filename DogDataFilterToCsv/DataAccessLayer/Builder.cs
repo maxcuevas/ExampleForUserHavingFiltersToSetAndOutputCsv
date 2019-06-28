@@ -23,23 +23,20 @@ namespace DogDataFilterToCsv.DataAccessLayer
                 return csvTableData;
             }
 
-            int TailHighToBeGreaterThan;
-            int tailHighToBelessThan;
+            int tailHighToBeGreaterThan = Convert.ToInt32(tailHighToBeGreaterThanAsString);
+            int tailHighToBelessThan = Convert.ToInt32(tailHighTobeLessThanAsString);
+
             if (onlyDataForGreaterThan(tailHighTobeLessThanAsString, tailHighToBeGreaterThanAsString))
             {
-                TailHighToBeGreaterThan = Convert.ToInt32(tailHighToBeGreaterThanAsString);
-                return csvTableData.Where(x => x.tail_high > TailHighToBeGreaterThan);
+                return csvTableData.Where(x => x.tail_high > tailHighToBeGreaterThan);
             }
 
             if (onlyDataForLessThan(tailHighTobeLessThanAsString, tailHighToBeGreaterThanAsString))
             {
-                tailHighToBelessThan = Convert.ToInt32(tailHighTobeLessThanAsString);
                 return csvTableData.Where(x => x.tail_high < tailHighToBelessThan);
             }
 
-            TailHighToBeGreaterThan = Convert.ToInt32(tailHighToBeGreaterThanAsString);
-            tailHighToBelessThan = Convert.ToInt32(tailHighTobeLessThanAsString);
-            return csvTableData.Where(x => x.tail_high < tailHighToBelessThan && x.tail_high > TailHighToBeGreaterThan);
+            return csvTableData.Where(x => x.tail_high < tailHighToBelessThan && x.tail_high > tailHighToBeGreaterThan);
         }
 
         private bool onlyDataForLessThan(string lessThanString, string greaterThanString)
@@ -194,17 +191,35 @@ namespace DogDataFilterToCsv.DataAccessLayer
             return csvTableData.Where(x => x.nose_low < noseLowToBelessThan && x.nose_low > noseLowToBeGreaterThan);
         }
 
+        public IQueryable<csvWithData> DateFilter(IQueryable<csvWithData> csvTableData,
+            DateTime dateTobeLessThan, DateTime dateToBeGreaterThan)
+        {
+            if (dateTobeLessThan == null && dateToBeGreaterThan == null)
+            {
+                return csvTableData;
+            }
+
+            if (dateTobeLessThan == null && dateToBeGreaterThan != null)
+            {
+                return csvTableData.Where(x => x.time_stamp > dateToBeGreaterThan);
+            }
+
+            if (dateTobeLessThan != null && dateToBeGreaterThan == null)
+            {
+                return csvTableData.Where(x => x.time_stamp < dateTobeLessThan);
+            }
+
+            return csvTableData.Where(x => x.time_stamp < dateTobeLessThan && x.time_stamp > dateToBeGreaterThan);
+        }
+
         private bool isValidData(string lessThanString, string greaterThanString)
         {
-            int intToBelessThan;
-            int intToBeGreaterThan;
-            return !Int32.TryParse(lessThanString, out intToBelessThan) && !Int32.TryParse(greaterThanString, out intToBeGreaterThan);
+            return !Int32.TryParse(lessThanString, out int intToBelessThan) && !Int32.TryParse(greaterThanString, out int intToBeGreaterThan);
         }
 
         public IQueryable<csvWithData> addNameFilter(IQueryable<csvWithData> csvTableData, string containsThisString)
         {
-            int notAString;
-            if (String.IsNullOrWhiteSpace(containsThisString) || Int32.TryParse(containsThisString, out notAString))
+            if (String.IsNullOrWhiteSpace(containsThisString) || Int32.TryParse(containsThisString, out int notAString))
             {
                 return csvTableData;
             }

@@ -38,7 +38,8 @@ namespace DogDataFilterToCsv
                              EarHighLessThanThisTextBox.Text, EarHighGreaterThanThisTextBox.Text,
                              EarLowLessThanThisTextBox.Text, EarLowGreaterThanThisTextBox.Text,
                              NoseHighLessThanThisTextBox.Text, NoseHighGreaterThanThisTextBox.Text,
-                             NoseLowLessThanThisTextBox.Text, NoseLowGreaterThanThisTextBox.Text);
+                             NoseLowLessThanThisTextBox.Text, NoseLowGreaterThanThisTextBox.Text,
+                             DateLessThanThisDatePicker.Value,DateGreaterThanThisDatePicker.Value);
         }
 
         private void generateCsvFileButton_Click(object sender, EventArgs e)

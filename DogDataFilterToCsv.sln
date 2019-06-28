@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.28307.705
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DogDataFilterToCsv", "DogDataFilterToCsv\DogDataFilterToCsv.csproj", "{55F2FA88-3F09-4363-9ABF-7085DEE4FB3C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DogDataFilterToCsvTestProject", "DogDataFilterToCsvTestProject\DogDataFilterToCsvTestProject.csproj", "{CF2347EB-0E32-4098-B61F-70E2535558A4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{55F2FA88-3F09-4363-9ABF-7085DEE4FB3C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{55F2FA88-3F09-4363-9ABF-7085DEE4FB3C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{55F2FA88-3F09-4363-9ABF-7085DEE4FB3C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CF2347EB-0E32-4098-B61F-70E2535558A4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CF2347EB-0E32-4098-B61F-70E2535558A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CF2347EB-0E32-4098-B61F-70E2535558A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CF2347EB-0E32-4098-B61F-70E2535558A4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
