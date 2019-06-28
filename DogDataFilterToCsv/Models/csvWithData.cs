@@ -9,14 +9,11 @@ namespace DogDataFilterToCsv.Models
     [Table("csvWithData")]
     public partial class csvWithData
     {
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int id { get; set; }
 
         [Required]
         [StringLength(50)]
         public string name { get; set; }
-
-        public int age { get; set; }
 
         public int tail_high { get; set; }
 
@@ -29,5 +26,8 @@ namespace DogDataFilterToCsv.Models
         public int nose_high { get; set; }
 
         public int nose_low { get; set; }
+
+        [Column(TypeName = "datetime2")]
+        public DateTime time_stamp { get; set; }
     }
 }

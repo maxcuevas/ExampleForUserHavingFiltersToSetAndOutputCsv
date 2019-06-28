@@ -24,8 +24,21 @@ namespace DogDataFilterToCsv
             var dataTableFactory = new DataTableFactory();
             var csvDataProvider = new CsvDataProvider();
             dataGridView1.DataSource = dataTableFactory.getDataTable(
-                csvDataProvider.getCsvData(searchNameTextBox.Text,TailHighGreaterThanThisTextBox.Text, TailHighLessThanThisTextBox.Text), 
+                getCsvData(csvDataProvider),
                 csvDataProvider.getCsvColumnNames());
+
+            TableRowCountTextBox.Text = "Row Count: " + dataGridView1.RowCount.ToString();
+        }
+
+        private IList<csvWithData> getCsvData(CsvDataProvider csvDataProvider)
+        {
+            return csvDataProvider.getCsvData(searchNameTextBox.Text,
+                            TailHighLessThanThisTextBox.Text, TailHighGreaterThanThisTextBox.Text,
+                             TailLowLessThanThisTextBox.Text, TailLowGreaterThanThisTextBox.Text,
+                             EarHighLessThanThisTextBox.Text, EarHighGreaterThanThisTextBox.Text,
+                             EarLowLessThanThisTextBox.Text, EarLowGreaterThanThisTextBox.Text,
+                             NoseHighLessThanThisTextBox.Text, NoseHighGreaterThanThisTextBox.Text,
+                             NoseLowLessThanThisTextBox.Text, NoseLowGreaterThanThisTextBox.Text);
         }
 
         private void generateCsvFileButton_Click(object sender, EventArgs e)
@@ -33,9 +46,10 @@ namespace DogDataFilterToCsv
             var csvDataProvider = new CsvDataProvider();
             var csvDataToCsvTransformer = new CsvDataToCsvTransformer();
             csvDataToCsvTransformer.writeDataToCsv(
-                csvDataProvider.getCsvData(searchNameTextBox.Text, TailHighGreaterThanThisTextBox.Text,TailHighLessThanThisTextBox.Text), 
-                fileNameTextBox.Text, 
+                getCsvData(csvDataProvider),
+                fileNameTextBox.Text,
                 csvDataProvider.getCsvColumnNames());
         }
+        
     }
 }

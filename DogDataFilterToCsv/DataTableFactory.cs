@@ -21,7 +21,13 @@ namespace DogDataFilterToCsv
 
                 dataRow["id"] = csvRow.id;
                 dataRow["name"] = csvRow.name;
-                dataRow["age"] = csvRow.age;
+                dataRow["tail_high"] = csvRow.tail_high;
+                dataRow["tail_low"] = csvRow.tail_low;
+                dataRow["ear_high"] = csvRow.ear_high;
+                dataRow["ear_low"] = csvRow.ear_low;
+                dataRow["nose_high"] = csvRow.nose_high;
+                dataRow["nose_low"] = csvRow.nose_low;
+                dataRow["time_stamp"] = csvRow.time_stamp;
 
                 dataTable.Rows.Add(dataRow);
             }

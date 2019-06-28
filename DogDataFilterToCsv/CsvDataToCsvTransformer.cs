@@ -35,7 +35,13 @@ namespace DogDataFilterToCsv
             var csvDataList = new List<string>();
             csvDataList.Add(csvData.id.ToString());
             csvDataList.Add(csvData.name.ToString());
-            csvDataList.Add(csvData.age.ToString());
+            csvDataList.Add(csvData.tail_high.ToString());
+            csvDataList.Add(csvData.tail_low.ToString());
+            csvDataList.Add(csvData.ear_high.ToString());
+            csvDataList.Add(csvData.ear_low.ToString());
+            csvDataList.Add(csvData.nose_high.ToString());
+            csvDataList.Add(csvData.nose_low.ToString());
+            csvDataList.Add(csvData.time_stamp.ToString());
             return String.Join(",", csvDataList);
         }
 

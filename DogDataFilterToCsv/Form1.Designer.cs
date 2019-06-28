@@ -63,20 +63,29 @@
             this.DateGreaterThanThisLabel = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.TableRowCountTextBox = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AllowUserToOrderColumns = true;
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 33);
+            this.dataGridView1.Location = new System.Drawing.Point(536, 32);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(669, 322);
             this.dataGridView1.TabIndex = 0;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(606, 361);
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1.Location = new System.Drawing.Point(1130, 360);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 1;
@@ -87,7 +96,7 @@
             // searchNameLabel
             // 
             this.searchNameLabel.AutoSize = true;
-            this.searchNameLabel.Location = new System.Drawing.Point(13, 10);
+            this.searchNameLabel.Location = new System.Drawing.Point(537, 9);
             this.searchNameLabel.Name = "searchNameLabel";
             this.searchNameLabel.Size = new System.Drawing.Size(78, 13);
             this.searchNameLabel.TabIndex = 2;
@@ -95,14 +104,14 @@
             // 
             // searchNameTextBox
             // 
-            this.searchNameTextBox.Location = new System.Drawing.Point(97, 7);
+            this.searchNameTextBox.Location = new System.Drawing.Point(621, 6);
             this.searchNameTextBox.Name = "searchNameTextBox";
             this.searchNameTextBox.Size = new System.Drawing.Size(100, 20);
             this.searchNameTextBox.TabIndex = 3;
             // 
             // TailHighGreaterThanThisTextBox
             // 
-            this.TailHighGreaterThanThisTextBox.Location = new System.Drawing.Point(845, 30);
+            this.TailHighGreaterThanThisTextBox.Location = new System.Drawing.Point(164, 32);
             this.TailHighGreaterThanThisTextBox.Name = "TailHighGreaterThanThisTextBox";
             this.TailHighGreaterThanThisTextBox.Size = new System.Drawing.Size(100, 20);
             this.TailHighGreaterThanThisTextBox.TabIndex = 4;
@@ -110,7 +119,7 @@
             // TailHighGreaterThanThisLabel
             // 
             this.TailHighGreaterThanThisLabel.AutoSize = true;
-            this.TailHighGreaterThanThisLabel.Location = new System.Drawing.Point(687, 33);
+            this.TailHighGreaterThanThisLabel.Location = new System.Drawing.Point(6, 35);
             this.TailHighGreaterThanThisLabel.Name = "TailHighGreaterThanThisLabel";
             this.TailHighGreaterThanThisLabel.Size = new System.Drawing.Size(144, 13);
             this.TailHighGreaterThanThisLabel.TabIndex = 5;
@@ -118,8 +127,10 @@
             // 
             // fileNameLabel
             // 
+            this.fileNameLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.fileNameLabel.AutoSize = true;
-            this.fileNameLabel.Location = new System.Drawing.Point(10, 366);
+            this.fileNameLabel.Location = new System.Drawing.Point(534, 365);
             this.fileNameLabel.Name = "fileNameLabel";
             this.fileNameLabel.Size = new System.Drawing.Size(60, 13);
             this.fileNameLabel.TabIndex = 6;
@@ -127,7 +138,8 @@
             // 
             // fileNameTextBox
             // 
-            this.fileNameTextBox.Location = new System.Drawing.Point(76, 363);
+            this.fileNameTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.fileNameTextBox.Location = new System.Drawing.Point(600, 362);
             this.fileNameTextBox.Name = "fileNameTextBox";
             this.fileNameTextBox.Size = new System.Drawing.Size(100, 20);
             this.fileNameTextBox.TabIndex = 7;
@@ -135,7 +147,8 @@
             // 
             // generateCsvFileButton
             // 
-            this.generateCsvFileButton.Location = new System.Drawing.Point(182, 361);
+            this.generateCsvFileButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.generateCsvFileButton.Location = new System.Drawing.Point(706, 360);
             this.generateCsvFileButton.Name = "generateCsvFileButton";
             this.generateCsvFileButton.Size = new System.Drawing.Size(113, 23);
             this.generateCsvFileButton.TabIndex = 8;
@@ -146,7 +159,7 @@
             // TailHighLessThanThisLabel
             // 
             this.TailHighLessThanThisLabel.AutoSize = true;
-            this.TailHighLessThanThisLabel.Location = new System.Drawing.Point(951, 33);
+            this.TailHighLessThanThisLabel.Location = new System.Drawing.Point(270, 35);
             this.TailHighLessThanThisLabel.Name = "TailHighLessThanThisLabel";
             this.TailHighLessThanThisLabel.Size = new System.Drawing.Size(131, 13);
             this.TailHighLessThanThisLabel.TabIndex = 9;
@@ -154,14 +167,14 @@
             // 
             // TailHighLessThanThisTextBox
             // 
-            this.TailHighLessThanThisTextBox.Location = new System.Drawing.Point(1096, 30);
+            this.TailHighLessThanThisTextBox.Location = new System.Drawing.Point(415, 32);
             this.TailHighLessThanThisTextBox.Name = "TailHighLessThanThisTextBox";
             this.TailHighLessThanThisTextBox.Size = new System.Drawing.Size(100, 20);
             this.TailHighLessThanThisTextBox.TabIndex = 10;
             // 
             // TailLowLessThanThisTextBox
             // 
-            this.TailLowLessThanThisTextBox.Location = new System.Drawing.Point(1096, 56);
+            this.TailLowLessThanThisTextBox.Location = new System.Drawing.Point(415, 58);
             this.TailLowLessThanThisTextBox.Name = "TailLowLessThanThisTextBox";
             this.TailLowLessThanThisTextBox.Size = new System.Drawing.Size(100, 20);
             this.TailLowLessThanThisTextBox.TabIndex = 14;
@@ -169,7 +182,7 @@
             // TailLowLessThanThisLabel
             // 
             this.TailLowLessThanThisLabel.AutoSize = true;
-            this.TailLowLessThanThisLabel.Location = new System.Drawing.Point(951, 59);
+            this.TailLowLessThanThisLabel.Location = new System.Drawing.Point(270, 61);
             this.TailLowLessThanThisLabel.Name = "TailLowLessThanThisLabel";
             this.TailLowLessThanThisLabel.Size = new System.Drawing.Size(129, 13);
             this.TailLowLessThanThisLabel.TabIndex = 13;
@@ -178,7 +191,7 @@
             // TailLowGreaterThanThisLabel
             // 
             this.TailLowGreaterThanThisLabel.AutoSize = true;
-            this.TailLowGreaterThanThisLabel.Location = new System.Drawing.Point(687, 59);
+            this.TailLowGreaterThanThisLabel.Location = new System.Drawing.Point(6, 61);
             this.TailLowGreaterThanThisLabel.Name = "TailLowGreaterThanThisLabel";
             this.TailLowGreaterThanThisLabel.Size = new System.Drawing.Size(142, 13);
             this.TailLowGreaterThanThisLabel.TabIndex = 12;
@@ -186,14 +199,14 @@
             // 
             // TailLowGreaterThanThisTextBox
             // 
-            this.TailLowGreaterThanThisTextBox.Location = new System.Drawing.Point(845, 56);
+            this.TailLowGreaterThanThisTextBox.Location = new System.Drawing.Point(164, 58);
             this.TailLowGreaterThanThisTextBox.Name = "TailLowGreaterThanThisTextBox";
             this.TailLowGreaterThanThisTextBox.Size = new System.Drawing.Size(100, 20);
             this.TailLowGreaterThanThisTextBox.TabIndex = 11;
             // 
             // EarHighLessThanThisTextBox
             // 
-            this.EarHighLessThanThisTextBox.Location = new System.Drawing.Point(1096, 82);
+            this.EarHighLessThanThisTextBox.Location = new System.Drawing.Point(415, 84);
             this.EarHighLessThanThisTextBox.Name = "EarHighLessThanThisTextBox";
             this.EarHighLessThanThisTextBox.Size = new System.Drawing.Size(100, 20);
             this.EarHighLessThanThisTextBox.TabIndex = 18;
@@ -201,7 +214,7 @@
             // EarHighLessThanThisLabel
             // 
             this.EarHighLessThanThisLabel.AutoSize = true;
-            this.EarHighLessThanThisLabel.Location = new System.Drawing.Point(951, 85);
+            this.EarHighLessThanThisLabel.Location = new System.Drawing.Point(270, 87);
             this.EarHighLessThanThisLabel.Name = "EarHighLessThanThisLabel";
             this.EarHighLessThanThisLabel.Size = new System.Drawing.Size(130, 13);
             this.EarHighLessThanThisLabel.TabIndex = 17;
@@ -210,7 +223,7 @@
             // EarHighGreaterThanThisLabel
             // 
             this.EarHighGreaterThanThisLabel.AutoSize = true;
-            this.EarHighGreaterThanThisLabel.Location = new System.Drawing.Point(687, 85);
+            this.EarHighGreaterThanThisLabel.Location = new System.Drawing.Point(6, 87);
             this.EarHighGreaterThanThisLabel.Name = "EarHighGreaterThanThisLabel";
             this.EarHighGreaterThanThisLabel.Size = new System.Drawing.Size(143, 13);
             this.EarHighGreaterThanThisLabel.TabIndex = 16;
@@ -218,14 +231,14 @@
             // 
             // EarHighGreaterThanThisTextBox
             // 
-            this.EarHighGreaterThanThisTextBox.Location = new System.Drawing.Point(845, 82);
+            this.EarHighGreaterThanThisTextBox.Location = new System.Drawing.Point(164, 84);
             this.EarHighGreaterThanThisTextBox.Name = "EarHighGreaterThanThisTextBox";
             this.EarHighGreaterThanThisTextBox.Size = new System.Drawing.Size(100, 20);
             this.EarHighGreaterThanThisTextBox.TabIndex = 15;
             // 
             // EarLowLessThanThisTextBox
             // 
-            this.EarLowLessThanThisTextBox.Location = new System.Drawing.Point(1096, 108);
+            this.EarLowLessThanThisTextBox.Location = new System.Drawing.Point(415, 110);
             this.EarLowLessThanThisTextBox.Name = "EarLowLessThanThisTextBox";
             this.EarLowLessThanThisTextBox.Size = new System.Drawing.Size(100, 20);
             this.EarLowLessThanThisTextBox.TabIndex = 22;
@@ -233,7 +246,7 @@
             // EarLowLessThanThisLabel
             // 
             this.EarLowLessThanThisLabel.AutoSize = true;
-            this.EarLowLessThanThisLabel.Location = new System.Drawing.Point(951, 111);
+            this.EarLowLessThanThisLabel.Location = new System.Drawing.Point(270, 113);
             this.EarLowLessThanThisLabel.Name = "EarLowLessThanThisLabel";
             this.EarLowLessThanThisLabel.Size = new System.Drawing.Size(128, 13);
             this.EarLowLessThanThisLabel.TabIndex = 21;
@@ -242,7 +255,7 @@
             // EarLowGreaterThanThisLabel
             // 
             this.EarLowGreaterThanThisLabel.AutoSize = true;
-            this.EarLowGreaterThanThisLabel.Location = new System.Drawing.Point(687, 111);
+            this.EarLowGreaterThanThisLabel.Location = new System.Drawing.Point(6, 113);
             this.EarLowGreaterThanThisLabel.Name = "EarLowGreaterThanThisLabel";
             this.EarLowGreaterThanThisLabel.Size = new System.Drawing.Size(141, 13);
             this.EarLowGreaterThanThisLabel.TabIndex = 20;
@@ -250,14 +263,14 @@
             // 
             // EarLowGreaterThanThisTextBox
             // 
-            this.EarLowGreaterThanThisTextBox.Location = new System.Drawing.Point(845, 108);
+            this.EarLowGreaterThanThisTextBox.Location = new System.Drawing.Point(164, 110);
             this.EarLowGreaterThanThisTextBox.Name = "EarLowGreaterThanThisTextBox";
             this.EarLowGreaterThanThisTextBox.Size = new System.Drawing.Size(100, 20);
             this.EarLowGreaterThanThisTextBox.TabIndex = 19;
             // 
             // NoseHighLessThanThisTextBox
             // 
-            this.NoseHighLessThanThisTextBox.Location = new System.Drawing.Point(1096, 134);
+            this.NoseHighLessThanThisTextBox.Location = new System.Drawing.Point(415, 136);
             this.NoseHighLessThanThisTextBox.Name = "NoseHighLessThanThisTextBox";
             this.NoseHighLessThanThisTextBox.Size = new System.Drawing.Size(100, 20);
             this.NoseHighLessThanThisTextBox.TabIndex = 26;
@@ -265,7 +278,7 @@
             // NoseHighLessThanThisLabel
             // 
             this.NoseHighLessThanThisLabel.AutoSize = true;
-            this.NoseHighLessThanThisLabel.Location = new System.Drawing.Point(951, 137);
+            this.NoseHighLessThanThisLabel.Location = new System.Drawing.Point(270, 139);
             this.NoseHighLessThanThisLabel.Name = "NoseHighLessThanThisLabel";
             this.NoseHighLessThanThisLabel.Size = new System.Drawing.Size(139, 13);
             this.NoseHighLessThanThisLabel.TabIndex = 25;
@@ -274,7 +287,7 @@
             // NoseHighGreaterThanThisLabel
             // 
             this.NoseHighGreaterThanThisLabel.AutoSize = true;
-            this.NoseHighGreaterThanThisLabel.Location = new System.Drawing.Point(687, 137);
+            this.NoseHighGreaterThanThisLabel.Location = new System.Drawing.Point(6, 139);
             this.NoseHighGreaterThanThisLabel.Name = "NoseHighGreaterThanThisLabel";
             this.NoseHighGreaterThanThisLabel.Size = new System.Drawing.Size(152, 13);
             this.NoseHighGreaterThanThisLabel.TabIndex = 24;
@@ -282,14 +295,14 @@
             // 
             // NoseHighGreaterThanThisTextBox
             // 
-            this.NoseHighGreaterThanThisTextBox.Location = new System.Drawing.Point(845, 134);
+            this.NoseHighGreaterThanThisTextBox.Location = new System.Drawing.Point(164, 136);
             this.NoseHighGreaterThanThisTextBox.Name = "NoseHighGreaterThanThisTextBox";
             this.NoseHighGreaterThanThisTextBox.Size = new System.Drawing.Size(100, 20);
             this.NoseHighGreaterThanThisTextBox.TabIndex = 23;
             // 
             // NoseLowLessThanThisTextBox
             // 
-            this.NoseLowLessThanThisTextBox.Location = new System.Drawing.Point(1096, 160);
+            this.NoseLowLessThanThisTextBox.Location = new System.Drawing.Point(415, 162);
             this.NoseLowLessThanThisTextBox.Name = "NoseLowLessThanThisTextBox";
             this.NoseLowLessThanThisTextBox.Size = new System.Drawing.Size(100, 20);
             this.NoseLowLessThanThisTextBox.TabIndex = 30;
@@ -297,7 +310,7 @@
             // NoseLowLessThanThisLabel
             // 
             this.NoseLowLessThanThisLabel.AutoSize = true;
-            this.NoseLowLessThanThisLabel.Location = new System.Drawing.Point(951, 163);
+            this.NoseLowLessThanThisLabel.Location = new System.Drawing.Point(270, 165);
             this.NoseLowLessThanThisLabel.Name = "NoseLowLessThanThisLabel";
             this.NoseLowLessThanThisLabel.Size = new System.Drawing.Size(137, 13);
             this.NoseLowLessThanThisLabel.TabIndex = 29;
@@ -306,7 +319,7 @@
             // NoseLowGreaterThanThisLabel
             // 
             this.NoseLowGreaterThanThisLabel.AutoSize = true;
-            this.NoseLowGreaterThanThisLabel.Location = new System.Drawing.Point(687, 163);
+            this.NoseLowGreaterThanThisLabel.Location = new System.Drawing.Point(6, 165);
             this.NoseLowGreaterThanThisLabel.Name = "NoseLowGreaterThanThisLabel";
             this.NoseLowGreaterThanThisLabel.Size = new System.Drawing.Size(150, 13);
             this.NoseLowGreaterThanThisLabel.TabIndex = 28;
@@ -314,7 +327,7 @@
             // 
             // NoseLowGreaterThanThisTextBox
             // 
-            this.NoseLowGreaterThanThisTextBox.Location = new System.Drawing.Point(845, 160);
+            this.NoseLowGreaterThanThisTextBox.Location = new System.Drawing.Point(164, 162);
             this.NoseLowGreaterThanThisTextBox.Name = "NoseLowGreaterThanThisTextBox";
             this.NoseLowGreaterThanThisTextBox.Size = new System.Drawing.Size(100, 20);
             this.NoseLowGreaterThanThisTextBox.TabIndex = 27;
@@ -322,7 +335,7 @@
             // DateLessThanThisLabel
             // 
             this.DateLessThanThisLabel.AutoSize = true;
-            this.DateLessThanThisLabel.Location = new System.Drawing.Point(688, 245);
+            this.DateLessThanThisLabel.Location = new System.Drawing.Point(7, 247);
             this.DateLessThanThisLabel.Name = "DateLessThanThisLabel";
             this.DateLessThanThisLabel.Size = new System.Drawing.Size(112, 13);
             this.DateLessThanThisLabel.TabIndex = 33;
@@ -331,7 +344,7 @@
             // DateGreaterThanThisLabel
             // 
             this.DateGreaterThanThisLabel.AutoSize = true;
-            this.DateGreaterThanThisLabel.Location = new System.Drawing.Point(688, 225);
+            this.DateGreaterThanThisLabel.Location = new System.Drawing.Point(7, 227);
             this.DateGreaterThanThisLabel.Name = "DateGreaterThanThisLabel";
             this.DateGreaterThanThisLabel.Size = new System.Drawing.Size(125, 13);
             this.DateGreaterThanThisLabel.TabIndex = 32;
@@ -339,23 +352,36 @@
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(819, 219);
+            this.dateTimePicker1.Location = new System.Drawing.Point(138, 221);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
             this.dateTimePicker1.TabIndex = 35;
             // 
             // dateTimePicker2
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(819, 245);
+            this.dateTimePicker2.Location = new System.Drawing.Point(138, 247);
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.Size = new System.Drawing.Size(200, 20);
             this.dateTimePicker2.TabIndex = 36;
+            // 
+            // TableRowCountTextBox
+            // 
+            this.TableRowCountTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.TableRowCountTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.TableRowCountTextBox.Location = new System.Drawing.Point(1105, 13);
+            this.TableRowCountTextBox.Name = "TableRowCountTextBox";
+            this.TableRowCountTextBox.ReadOnly = true;
+            this.TableRowCountTextBox.Size = new System.Drawing.Size(100, 13);
+            this.TableRowCountTextBox.TabIndex = 37;
+            this.TableRowCountTextBox.Text = "Row Count: 0";
+            this.TableRowCountTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1210, 402);
+            this.ClientSize = new System.Drawing.Size(1225, 396);
+            this.Controls.Add(this.TableRowCountTextBox);
             this.Controls.Add(this.dateTimePicker2);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.DateLessThanThisLabel);
@@ -436,6 +462,7 @@
         private System.Windows.Forms.Label DateGreaterThanThisLabel;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.TextBox TableRowCountTextBox;
     }
 }
 
