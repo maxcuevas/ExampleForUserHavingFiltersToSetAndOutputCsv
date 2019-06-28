@@ -24,7 +24,7 @@ namespace DogDataFilterToCsv
             var dataTableFactory = new DataTableFactory();
             var csvDataProvider = new CsvDataProvider();
             dataGridView1.DataSource = dataTableFactory.getDataTable(
-                csvDataProvider.getCsvData(searchNameTextBox.Text,ageLessThanThisTextBox.Text, ageGreaterThanTextBox.Text), 
+                csvDataProvider.getCsvData(searchNameTextBox.Text,TailHighGreaterThanThisTextBox.Text, TailHighLessThanThisTextBox.Text), 
                 csvDataProvider.getCsvColumnNames());
         }
 
@@ -33,7 +33,7 @@ namespace DogDataFilterToCsv
             var csvDataProvider = new CsvDataProvider();
             var csvDataToCsvTransformer = new CsvDataToCsvTransformer();
             csvDataToCsvTransformer.writeDataToCsv(
-                csvDataProvider.getCsvData(searchNameTextBox.Text, ageLessThanThisTextBox.Text,ageGreaterThanTextBox.Text), 
+                csvDataProvider.getCsvData(searchNameTextBox.Text, TailHighGreaterThanThisTextBox.Text,TailHighLessThanThisTextBox.Text), 
                 fileNameTextBox.Text, 
                 csvDataProvider.getCsvColumnNames());
         }

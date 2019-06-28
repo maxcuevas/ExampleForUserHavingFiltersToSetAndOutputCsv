@@ -17,5 +17,17 @@ namespace DogDataFilterToCsv.Models
         public string name { get; set; }
 
         public int age { get; set; }
+
+        public int tail_high { get; set; }
+
+        public int tail_low { get; set; }
+
+        public int ear_high { get; set; }
+
+        public int ear_low { get; set; }
+
+        public int nose_high { get; set; }
+
+        public int nose_low { get; set; }
     }
 }
