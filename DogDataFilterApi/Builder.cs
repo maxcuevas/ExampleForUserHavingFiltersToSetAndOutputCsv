@@ -213,7 +213,7 @@ namespace DogDataFilterApi
 
         public IQueryable<csvWithData> addNameFilter(IQueryable<csvWithData> csvTableData, string containsThisString)
         {
-            if (String.IsNullOrWhiteSpace(containsThisString) || Int32.TryParse(containsThisString, out int notAString))
+            if (String.IsNullOrWhiteSpace(containsThisString))
             {
                 return csvTableData;
             }

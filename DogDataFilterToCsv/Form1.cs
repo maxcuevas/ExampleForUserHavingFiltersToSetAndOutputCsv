@@ -157,5 +157,15 @@ namespace DogDataFilterToCsv
             ShowDataButton.Enabled = isEnabled;
             return isEnabled;
         }
+
+        private void searchNameTextBox_TextChanged(object sender, EventArgs e)
+        {
+            refreshDataGridViewData(true);
+        }
+
+        private void DateGreaterThanThisDatePicker_ValueChanged(object sender, EventArgs e)
+        {
+            refreshDataGridViewData(true);
+        }
     }
 }

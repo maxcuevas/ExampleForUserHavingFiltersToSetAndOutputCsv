@@ -108,6 +108,7 @@
             this.searchNameTextBox.Name = "searchNameTextBox";
             this.searchNameTextBox.Size = new System.Drawing.Size(100, 20);
             this.searchNameTextBox.TabIndex = 3;
+            this.searchNameTextBox.TextChanged += new System.EventHandler(this.searchNameTextBox_TextChanged);
             // 
             // TailHighGreaterThanThisTextBox
             // 
@@ -368,6 +369,7 @@
             this.DateGreaterThanThisDatePicker.Name = "DateGreaterThanThisDatePicker";
             this.DateGreaterThanThisDatePicker.Size = new System.Drawing.Size(200, 20);
             this.DateGreaterThanThisDatePicker.TabIndex = 35;
+            this.DateGreaterThanThisDatePicker.ValueChanged += new System.EventHandler(this.DateGreaterThanThisDatePicker_ValueChanged);
             // 
             // DateLessThanThisDatePicker
             // 
