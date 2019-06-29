@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
+            this.ShowDataButton = new System.Windows.Forms.Button();
             this.searchNameLabel = new System.Windows.Forms.Label();
             this.searchNameTextBox = new System.Windows.Forms.TextBox();
             this.TailHighGreaterThanThisTextBox = new System.Windows.Forms.TextBox();
@@ -82,16 +82,16 @@
             this.dataGridView1.Size = new System.Drawing.Size(669, 322);
             this.dataGridView1.TabIndex = 0;
             // 
-            // button1
+            // ShowDataButton
             // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.Location = new System.Drawing.Point(1130, 360);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Show Data";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.ShowDataButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.ShowDataButton.Location = new System.Drawing.Point(1130, 360);
+            this.ShowDataButton.Name = "ShowDataButton";
+            this.ShowDataButton.Size = new System.Drawing.Size(75, 23);
+            this.ShowDataButton.TabIndex = 1;
+            this.ShowDataButton.Text = "Show Data";
+            this.ShowDataButton.UseVisualStyleBackColor = true;
+            this.ShowDataButton.Click += new System.EventHandler(this.button1_Click);
             // 
             // searchNameLabel
             // 
@@ -115,6 +115,7 @@
             this.TailHighGreaterThanThisTextBox.Name = "TailHighGreaterThanThisTextBox";
             this.TailHighGreaterThanThisTextBox.Size = new System.Drawing.Size(100, 20);
             this.TailHighGreaterThanThisTextBox.TabIndex = 4;
+            this.TailHighGreaterThanThisTextBox.TextChanged += new System.EventHandler(this.TailHighGreaterThanThisTextBox_TextChanged);
             // 
             // TailHighGreaterThanThisLabel
             // 
@@ -171,6 +172,7 @@
             this.TailHighLessThanThisTextBox.Name = "TailHighLessThanThisTextBox";
             this.TailHighLessThanThisTextBox.Size = new System.Drawing.Size(100, 20);
             this.TailHighLessThanThisTextBox.TabIndex = 10;
+            this.TailHighLessThanThisTextBox.TextChanged += new System.EventHandler(this.TailHighLessThanThisTextBox_TextChanged);
             // 
             // TailLowLessThanThisTextBox
             // 
@@ -178,6 +180,7 @@
             this.TailLowLessThanThisTextBox.Name = "TailLowLessThanThisTextBox";
             this.TailLowLessThanThisTextBox.Size = new System.Drawing.Size(100, 20);
             this.TailLowLessThanThisTextBox.TabIndex = 14;
+            this.TailLowLessThanThisTextBox.TextChanged += new System.EventHandler(this.TailLowLessThanThisTextBox_TextChanged);
             // 
             // TailLowLessThanThisLabel
             // 
@@ -203,6 +206,7 @@
             this.TailLowGreaterThanThisTextBox.Name = "TailLowGreaterThanThisTextBox";
             this.TailLowGreaterThanThisTextBox.Size = new System.Drawing.Size(100, 20);
             this.TailLowGreaterThanThisTextBox.TabIndex = 11;
+            this.TailLowGreaterThanThisTextBox.TextChanged += new System.EventHandler(this.TailLowGreaterThanThisTextBox_TextChanged);
             // 
             // EarHighLessThanThisTextBox
             // 
@@ -210,6 +214,7 @@
             this.EarHighLessThanThisTextBox.Name = "EarHighLessThanThisTextBox";
             this.EarHighLessThanThisTextBox.Size = new System.Drawing.Size(100, 20);
             this.EarHighLessThanThisTextBox.TabIndex = 18;
+            this.EarHighLessThanThisTextBox.TextChanged += new System.EventHandler(this.EarHighLessThanThisTextBox_TextChanged);
             // 
             // EarHighLessThanThisLabel
             // 
@@ -235,6 +240,7 @@
             this.EarHighGreaterThanThisTextBox.Name = "EarHighGreaterThanThisTextBox";
             this.EarHighGreaterThanThisTextBox.Size = new System.Drawing.Size(100, 20);
             this.EarHighGreaterThanThisTextBox.TabIndex = 15;
+            this.EarHighGreaterThanThisTextBox.TextChanged += new System.EventHandler(this.EarHighGreaterThanThisTextBox_TextChanged);
             // 
             // EarLowLessThanThisTextBox
             // 
@@ -242,6 +248,7 @@
             this.EarLowLessThanThisTextBox.Name = "EarLowLessThanThisTextBox";
             this.EarLowLessThanThisTextBox.Size = new System.Drawing.Size(100, 20);
             this.EarLowLessThanThisTextBox.TabIndex = 22;
+            this.EarLowLessThanThisTextBox.TextChanged += new System.EventHandler(this.EarLowLessThanThisTextBox_TextChanged);
             // 
             // EarLowLessThanThisLabel
             // 
@@ -267,6 +274,7 @@
             this.EarLowGreaterThanThisTextBox.Name = "EarLowGreaterThanThisTextBox";
             this.EarLowGreaterThanThisTextBox.Size = new System.Drawing.Size(100, 20);
             this.EarLowGreaterThanThisTextBox.TabIndex = 19;
+            this.EarLowGreaterThanThisTextBox.TextChanged += new System.EventHandler(this.EarLowGreaterThanThisTextBox_TextChanged);
             // 
             // NoseHighLessThanThisTextBox
             // 
@@ -274,6 +282,7 @@
             this.NoseHighLessThanThisTextBox.Name = "NoseHighLessThanThisTextBox";
             this.NoseHighLessThanThisTextBox.Size = new System.Drawing.Size(100, 20);
             this.NoseHighLessThanThisTextBox.TabIndex = 26;
+            this.NoseHighLessThanThisTextBox.TextChanged += new System.EventHandler(this.NoseHighLessThanThisTextBox_TextChanged);
             // 
             // NoseHighLessThanThisLabel
             // 
@@ -299,6 +308,7 @@
             this.NoseHighGreaterThanThisTextBox.Name = "NoseHighGreaterThanThisTextBox";
             this.NoseHighGreaterThanThisTextBox.Size = new System.Drawing.Size(100, 20);
             this.NoseHighGreaterThanThisTextBox.TabIndex = 23;
+            this.NoseHighGreaterThanThisTextBox.TextChanged += new System.EventHandler(this.NoseHighGreaterThanThisTextBox_TextChanged);
             // 
             // NoseLowLessThanThisTextBox
             // 
@@ -306,6 +316,7 @@
             this.NoseLowLessThanThisTextBox.Name = "NoseLowLessThanThisTextBox";
             this.NoseLowLessThanThisTextBox.Size = new System.Drawing.Size(100, 20);
             this.NoseLowLessThanThisTextBox.TabIndex = 30;
+            this.NoseLowLessThanThisTextBox.TextChanged += new System.EventHandler(this.NoseLowLessThanThisTextBox_TextChanged);
             // 
             // NoseLowLessThanThisLabel
             // 
@@ -331,6 +342,7 @@
             this.NoseLowGreaterThanThisTextBox.Name = "NoseLowGreaterThanThisTextBox";
             this.NoseLowGreaterThanThisTextBox.Size = new System.Drawing.Size(100, 20);
             this.NoseLowGreaterThanThisTextBox.TabIndex = 27;
+            this.NoseLowGreaterThanThisTextBox.TextChanged += new System.EventHandler(this.NoseLowGreaterThanThisTextBox_TextChanged);
             // 
             // DateLessThanThisLabel
             // 
@@ -415,7 +427,7 @@
             this.Controls.Add(this.TailHighGreaterThanThisTextBox);
             this.Controls.Add(this.searchNameTextBox);
             this.Controls.Add(this.searchNameLabel);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.ShowDataButton);
             this.Controls.Add(this.dataGridView1);
             this.Name = "Form1";
             this.Text = "Form1";
@@ -428,7 +440,7 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button ShowDataButton;
         private System.Windows.Forms.Label searchNameLabel;
         private System.Windows.Forms.TextBox searchNameTextBox;
         private System.Windows.Forms.TextBox TailHighGreaterThanThisTextBox;

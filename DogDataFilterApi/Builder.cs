@@ -26,7 +26,7 @@ namespace DogDataFilterApi
             {
                 tailHighToBeGreaterThan = Convert.ToInt32(lessThanAndGreaterThanStrings.greaterThan);
                 return csvTableData.Where(x => x.tail_high > tailHighToBeGreaterThan);
-            }
+            } 
 
             if (onlyDataForLessThan(lessThanAndGreaterThanStrings.lessThan, lessThanAndGreaterThanStrings.greaterThan))
             {
