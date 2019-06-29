@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DogDataFilterApi.Models;
+using System;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -13,75 +14,94 @@ namespace DogDataFilterToCsv
 
         private void button1_Click(object sender, EventArgs e)
         {
+            getDataGridViewData();
+        }
+
+        private void getDataGridViewData()
+        {
             var dogDataFilterApi = new DogDataFilterApi.Api();
-            var noseData = new DogDataFilterApi.Models.Nose(NoseHighLessThanThisTextBox.Text, NoseHighGreaterThanThisTextBox.Text,
-                             NoseLowLessThanThisTextBox.Text, NoseLowGreaterThanThisTextBox.Text);
-            var tailData = new DogDataFilterApi.Models.Tail(TailHighLessThanThisTextBox.Text, TailHighGreaterThanThisTextBox.Text,
-                             TailLowLessThanThisTextBox.Text, TailLowGreaterThanThisTextBox.Text);
-            var earData = new DogDataFilterApi.Models.Ear(EarHighLessThanThisTextBox.Text, EarHighGreaterThanThisTextBox.Text,
-                             EarLowLessThanThisTextBox.Text, EarLowGreaterThanThisTextBox.Text);
-            var dateAndTimeData = new DogDataFilterApi.Models.DateAndTime(DateLessThanThisDatePicker.Value, DateGreaterThanThisDatePicker.Value);
-
             dataGridView1.DataSource = dogDataFilterApi.getDataTable(searchNameTextBox.Text,
-                            tailData, earData, noseData, dateAndTimeData);
-
+                            getTailData(),
+                            getEarData(),
+                            getNoseData(),
+                            getDateAndTimeData());
             TableRowCountTextBox.Text = "Row Count: " + dataGridView1.RowCount.ToString();
         }
 
         private void generateCsvFileButton_Click(object sender, EventArgs e)
         {
             var dogDataFilterApi = new DogDataFilterApi.Api();
-            var noseData = new DogDataFilterApi.Models.Nose(NoseHighLessThanThisTextBox.Text, NoseHighGreaterThanThisTextBox.Text,
-                             NoseLowLessThanThisTextBox.Text, NoseLowGreaterThanThisTextBox.Text);
-            var tailData = new DogDataFilterApi.Models.Tail(TailHighLessThanThisTextBox.Text, TailHighGreaterThanThisTextBox.Text,
-                             TailLowLessThanThisTextBox.Text, TailLowGreaterThanThisTextBox.Text);
-            var earData = new DogDataFilterApi.Models.Ear(EarHighLessThanThisTextBox.Text, EarHighGreaterThanThisTextBox.Text,
-                             EarLowLessThanThisTextBox.Text, EarLowGreaterThanThisTextBox.Text);
-            var dateAndTimeData = new DogDataFilterApi.Models.DateAndTime(DateLessThanThisDatePicker.Value, DateGreaterThanThisDatePicker.Value);
+            dogDataFilterApi.generateCsv(fileNameTextBox.Text,
+                searchNameTextBox.Text,
+                getTailData(),
+                getEarData(),
+                getNoseData(),
+                getDateAndTimeData());
+        }
 
-            dogDataFilterApi.generateCsv(fileNameTextBox.Text, searchNameTextBox.Text, tailData, earData, noseData, dateAndTimeData);
+        private DateAndTime getDateAndTimeData()
+        {
+            return new DogDataFilterApi.Models.DateAndTime(DateLessThanThisDatePicker.Value, DateGreaterThanThisDatePicker.Value);
+        }
+
+        private Ear getEarData()
+        {
+            return new DogDataFilterApi.Models.Ear(EarHighLessThanThisTextBox.Text, EarHighGreaterThanThisTextBox.Text,
+                             EarLowLessThanThisTextBox.Text, EarLowGreaterThanThisTextBox.Text);
+        }
+
+        private Tail getTailData()
+        {
+            return new DogDataFilterApi.Models.Tail(TailHighLessThanThisTextBox.Text, TailHighGreaterThanThisTextBox.Text,
+                             TailLowLessThanThisTextBox.Text, TailLowGreaterThanThisTextBox.Text);
+        }
+
+        private Nose getNoseData()
+        {
+            return new DogDataFilterApi.Models.Nose(NoseHighLessThanThisTextBox.Text, NoseHighGreaterThanThisTextBox.Text,
+                             NoseLowLessThanThisTextBox.Text, NoseLowGreaterThanThisTextBox.Text);
         }
 
         private void TailHighLessThanThisTextBox_TextChanged(object sender, EventArgs e)
         {
             TailHighLessThanThisTextBox.BackColor = getTextBoxBackGroundColor(TailHighLessThanThisTextBox.Text);
-            setButtonEnableState(TailHighLessThanThisTextBox.BackColor);
+            refreshDataGridViewData(isButtonEnabled(TailHighLessThanThisTextBox.BackColor));
         }
 
         private void TailLowLessThanThisTextBox_TextChanged(object sender, EventArgs e)
         {
             TailLowLessThanThisTextBox.BackColor = getTextBoxBackGroundColor(TailLowLessThanThisTextBox.Text);
-            setButtonEnableState(TailLowLessThanThisTextBox.BackColor);
+            refreshDataGridViewData(isButtonEnabled(TailLowLessThanThisTextBox.BackColor));
         }
 
         private void EarHighLessThanThisTextBox_TextChanged(object sender, EventArgs e)
         {
             EarHighLessThanThisTextBox.BackColor = getTextBoxBackGroundColor(EarHighLessThanThisTextBox.Text);
-            setButtonEnableState(EarHighLessThanThisTextBox.BackColor);
+            refreshDataGridViewData(isButtonEnabled(EarHighLessThanThisTextBox.BackColor));
         }
 
         private void EarLowLessThanThisTextBox_TextChanged(object sender, EventArgs e)
         {
             EarLowLessThanThisTextBox.BackColor = getTextBoxBackGroundColor(EarLowLessThanThisTextBox.Text);
-            setButtonEnableState(EarLowLessThanThisTextBox.BackColor);
+            refreshDataGridViewData(isButtonEnabled(EarLowLessThanThisTextBox.BackColor));
         }
 
         private void NoseHighLessThanThisTextBox_TextChanged(object sender, EventArgs e)
         {
             NoseHighLessThanThisTextBox.BackColor = getTextBoxBackGroundColor(NoseHighLessThanThisTextBox.Text);
-            setButtonEnableState(NoseHighLessThanThisTextBox.BackColor);
+            refreshDataGridViewData(isButtonEnabled(NoseHighLessThanThisTextBox.BackColor));
         }
 
         private void NoseLowLessThanThisTextBox_TextChanged(object sender, EventArgs e)
         {
             NoseLowLessThanThisTextBox.BackColor = getTextBoxBackGroundColor(NoseLowLessThanThisTextBox.Text);
-            setButtonEnableState(NoseLowLessThanThisTextBox.BackColor);
+            refreshDataGridViewData(isButtonEnabled(NoseLowLessThanThisTextBox.BackColor));
         }
 
         private void TailHighGreaterThanThisTextBox_TextChanged(object sender, EventArgs e)
         {
             TailHighGreaterThanThisTextBox.BackColor = getTextBoxBackGroundColor(TailHighGreaterThanThisTextBox.Text);
-            setButtonEnableState(TailHighGreaterThanThisTextBox.BackColor);
+            refreshDataGridViewData(isButtonEnabled(TailHighGreaterThanThisTextBox.BackColor));
         }
 
         private Color getTextBoxBackGroundColor(string text)
@@ -95,37 +115,47 @@ namespace DogDataFilterToCsv
         private void TailLowGreaterThanThisTextBox_TextChanged(object sender, EventArgs e)
         {
             TailLowGreaterThanThisTextBox.BackColor = getTextBoxBackGroundColor(TailLowGreaterThanThisTextBox.Text);
-            setButtonEnableState(TailLowGreaterThanThisTextBox.BackColor);
+            refreshDataGridViewData(isButtonEnabled(TailLowGreaterThanThisTextBox.BackColor));
         }
 
         private void EarHighGreaterThanThisTextBox_TextChanged(object sender, EventArgs e)
         {
             EarHighGreaterThanThisTextBox.BackColor = getTextBoxBackGroundColor(EarHighGreaterThanThisTextBox.Text);
-            setButtonEnableState(EarHighGreaterThanThisTextBox.BackColor);
+            refreshDataGridViewData(isButtonEnabled(EarHighGreaterThanThisTextBox.BackColor));
         }
 
         private void EarLowGreaterThanThisTextBox_TextChanged(object sender, EventArgs e)
         {
             EarLowGreaterThanThisTextBox.BackColor = getTextBoxBackGroundColor(EarLowGreaterThanThisTextBox.Text);
-            setButtonEnableState(EarLowGreaterThanThisTextBox.BackColor);
+            refreshDataGridViewData(isButtonEnabled(EarLowGreaterThanThisTextBox.BackColor));
         }
 
         private void NoseHighGreaterThanThisTextBox_TextChanged(object sender, EventArgs e)
         {
             NoseHighGreaterThanThisTextBox.BackColor = getTextBoxBackGroundColor(NoseHighGreaterThanThisTextBox.Text);
-            setButtonEnableState(NoseHighGreaterThanThisTextBox.BackColor);
+            refreshDataGridViewData(isButtonEnabled(NoseHighGreaterThanThisTextBox.BackColor));
         }
 
         private void NoseLowGreaterThanThisTextBox_TextChanged(object sender, EventArgs e)
         {
             NoseLowGreaterThanThisTextBox.BackColor = getTextBoxBackGroundColor(NoseLowGreaterThanThisTextBox.Text);
-            setButtonEnableState(NoseLowGreaterThanThisTextBox.BackColor);
+            refreshDataGridViewData(isButtonEnabled(NoseLowGreaterThanThisTextBox.BackColor));
         }
 
-        private void setButtonEnableState(Color color)
+        private void refreshDataGridViewData(bool refresh)
         {
-            generateCsvFileButton.Enabled = color == Color.Red ? false : true;
-            ShowDataButton.Enabled = color == Color.Red ? false : true;
+            if (refresh)
+            {
+                getDataGridViewData();
+            }
+        }
+
+        private bool isButtonEnabled(Color color)
+        {
+            bool isEnabled = color == Color.Red ? false : true;
+            generateCsvFileButton.Enabled = isEnabled;
+            ShowDataButton.Enabled = isEnabled;
+            return isEnabled;
         }
     }
 }
