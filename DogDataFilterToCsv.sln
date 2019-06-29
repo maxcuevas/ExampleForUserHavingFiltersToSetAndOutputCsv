@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DogDataFilterToCsv", "DogDa
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DogDataFilterToCsvTestProject", "DogDataFilterToCsvTestProject\DogDataFilterToCsvTestProject.csproj", "{CF2347EB-0E32-4098-B61F-70E2535558A4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DogDataFilterApi", "DogDataFilterApi\DogDataFilterApi.csproj", "{E654EADF-20DA-40DC-A514-25D38515E2DE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{CF2347EB-0E32-4098-B61F-70E2535558A4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CF2347EB-0E32-4098-B61F-70E2535558A4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CF2347EB-0E32-4098-B61F-70E2535558A4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E654EADF-20DA-40DC-A514-25D38515E2DE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E654EADF-20DA-40DC-A514-25D38515E2DE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E654EADF-20DA-40DC-A514-25D38515E2DE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E654EADF-20DA-40DC-A514-25D38515E2DE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

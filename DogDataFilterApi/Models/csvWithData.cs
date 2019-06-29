@@ -1,10 +1,8 @@
-namespace DogDataFilterToCsv.Models
+namespace DogDataFilterApi.Models
 {
     using System;
-    using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
-    using System.Data.Entity.Spatial;
 
     [Table("csvWithData")]
     public partial class csvWithData

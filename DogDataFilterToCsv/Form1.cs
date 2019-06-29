@@ -1,13 +1,4 @@
-﻿using DogDataFilterToCsv.DataAccessLayer;
-using DogDataFilterToCsv.Models;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System;
 using System.Windows.Forms;
 
 namespace DogDataFilterToCsv
@@ -21,36 +12,34 @@ namespace DogDataFilterToCsv
 
         private void button1_Click(object sender, EventArgs e)
         {
-            var dataTableFactory = new DataTableFactory();
-            var csvDataProvider = new CsvDataProvider();
-            dataGridView1.DataSource = dataTableFactory.getDataTable(
-                getCsvData(csvDataProvider),
-                csvDataProvider.getCsvColumnNames());
+            var dogDataFilterApi = new DogDataFilterApi.Api();
+            var noseData = new DogDataFilterApi.Models.Nose(NoseHighLessThanThisTextBox.Text, NoseHighGreaterThanThisTextBox.Text,
+                             NoseLowLessThanThisTextBox.Text, NoseLowGreaterThanThisTextBox.Text);
+            var tailData = new DogDataFilterApi.Models.Tail(TailHighLessThanThisTextBox.Text, TailHighGreaterThanThisTextBox.Text,
+                             TailLowLessThanThisTextBox.Text, TailLowGreaterThanThisTextBox.Text);
+            var earData = new DogDataFilterApi.Models.Ear(EarHighLessThanThisTextBox.Text, EarHighGreaterThanThisTextBox.Text,
+                             EarLowLessThanThisTextBox.Text, EarLowGreaterThanThisTextBox.Text);
+            var dateAndTimeData = new DogDataFilterApi.Models.DateAndTime(DateLessThanThisDatePicker.Value, DateGreaterThanThisDatePicker.Value);
+
+            dataGridView1.DataSource = dogDataFilterApi.getDataTable(searchNameTextBox.Text,
+                            tailData, earData, noseData, dateAndTimeData);
 
             TableRowCountTextBox.Text = "Row Count: " + dataGridView1.RowCount.ToString();
         }
 
-        private IList<csvWithData> getCsvData(CsvDataProvider csvDataProvider)
-        {
-            return csvDataProvider.getCsvData(searchNameTextBox.Text,
-                            TailHighLessThanThisTextBox.Text, TailHighGreaterThanThisTextBox.Text,
-                             TailLowLessThanThisTextBox.Text, TailLowGreaterThanThisTextBox.Text,
-                             EarHighLessThanThisTextBox.Text, EarHighGreaterThanThisTextBox.Text,
-                             EarLowLessThanThisTextBox.Text, EarLowGreaterThanThisTextBox.Text,
-                             NoseHighLessThanThisTextBox.Text, NoseHighGreaterThanThisTextBox.Text,
-                             NoseLowLessThanThisTextBox.Text, NoseLowGreaterThanThisTextBox.Text,
-                             DateLessThanThisDatePicker.Value,DateGreaterThanThisDatePicker.Value);
-        }
-
         private void generateCsvFileButton_Click(object sender, EventArgs e)
         {
-            var csvDataProvider = new CsvDataProvider();
-            var csvDataToCsvTransformer = new CsvDataToCsvTransformer();
-            csvDataToCsvTransformer.writeDataToCsv(
-                getCsvData(csvDataProvider),
-                fileNameTextBox.Text,
-                csvDataProvider.getCsvColumnNames());
+            var dogDataFilterApi = new DogDataFilterApi.Api();
+            var noseData = new DogDataFilterApi.Models.Nose(NoseHighLessThanThisTextBox.Text, NoseHighGreaterThanThisTextBox.Text,
+                             NoseLowLessThanThisTextBox.Text, NoseLowGreaterThanThisTextBox.Text);
+            var tailData = new DogDataFilterApi.Models.Tail(TailHighLessThanThisTextBox.Text, TailHighGreaterThanThisTextBox.Text,
+                             TailLowLessThanThisTextBox.Text, TailLowGreaterThanThisTextBox.Text);
+            var earData = new DogDataFilterApi.Models.Ear(EarHighLessThanThisTextBox.Text, EarHighGreaterThanThisTextBox.Text,
+                             EarLowLessThanThisTextBox.Text, EarLowGreaterThanThisTextBox.Text);
+            var dateAndTimeData = new DogDataFilterApi.Models.DateAndTime(DateLessThanThisDatePicker.Value, DateGreaterThanThisDatePicker.Value);
+
+            dogDataFilterApi.generateCsv(fileNameTextBox.Text, searchNameTextBox.Text, tailData, earData, noseData, dateAndTimeData);
         }
-        
+
     }
 }

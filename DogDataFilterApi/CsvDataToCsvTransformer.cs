@@ -1,12 +1,10 @@
-﻿using DogDataFilterToCsv.Models;
+﻿using DogDataFilterApi.Models;
 using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 
-namespace DogDataFilterToCsv
+namespace DogDataFilterApi
 {
     class CsvDataToCsvTransformer
     {

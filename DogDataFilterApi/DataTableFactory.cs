@@ -1,12 +1,8 @@
-﻿using DogDataFilterToCsv.Models;
-using System;
+﻿using DogDataFilterApi.Models;
 using System.Collections.Generic;
 using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace DogDataFilterToCsv
+namespace DogDataFilterApi
 {
     class DataTableFactory
     {

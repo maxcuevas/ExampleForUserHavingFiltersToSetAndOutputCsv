@@ -1,4 +1,4 @@
-namespace DogDataFilterToCsv.Models
+namespace DogDataFilterApi.Models
 {
     using System;
     using System.Data.Entity;
