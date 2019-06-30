@@ -1,4 +1,5 @@
 ﻿using DogDataFilterApi.Models;
+using DogDataFilterToCsv.Models;
 using System.Collections.Generic;
 using System.Data;
 
@@ -6,29 +7,44 @@ namespace DogDataFilterApi
 {
     class DataTableFactory
     {
-        public DataTable getDataTable(IList<csvWithData> csvDataList, IList<string> csvColumnNames)
+        public DataTable getDataTable(TableVersion.Value tableVersion, IList<IVersionAgnostic> csvDataList, IList<string> csvColumnNames)
         {
             DataTable dataTable = new DataTable();
             dataTable.Columns.AddRange(getDataColumns(csvColumnNames));
-
-            foreach (var csvRow in csvDataList)
+            for (int rowCount = 0; rowCount < csvDataList.Count; rowCount++)
             {
-                var dataRow = dataTable.NewRow();
+                dataTable.Rows.Add(getRow(tableVersion, csvDataList[rowCount], csvColumnNames, dataTable));
+            }
+            return dataTable;
+        }
 
-                dataRow["id"] = csvRow.id;
-                dataRow["name"] = csvRow.name;
-                dataRow["tail_high"] = csvRow.tail_high;
-                dataRow["tail_low"] = csvRow.tail_low;
-                dataRow["ear_high"] = csvRow.ear_high;
-                dataRow["ear_low"] = csvRow.ear_low;
-                dataRow["nose_high"] = csvRow.nose_high;
-                dataRow["nose_low"] = csvRow.nose_low;
-                dataRow["time_stamp"] = csvRow.time_stamp;
-
-                dataTable.Rows.Add(dataRow);
+        private DataRow getRow(TableVersion.Value tableVersion, IVersionAgnostic csvData, IList<string> csvColumnNames, DataTable dataTable)
+        {
+            var dataRow = dataTable.NewRow();
+            if (tableVersion == TableVersion.Value.Version1)
+            {
+               return getVersion1Row(csvData, csvColumnNames, dataRow);
             }
 
-            return dataTable;
+            return getVersion2Row(csvData, csvColumnNames, dataRow);
+        }
+
+        private DataRow getVersion2Row(IVersionAgnostic csvData, IList<string> csvColumnNames, DataRow dataRow)
+        {
+            for (int columnCount = 0; columnCount < csvColumnNames.Count; columnCount++)
+            {
+                dataRow[csvColumnNames[columnCount]] = new csvWithDataVersion2().GetType().GetProperty(csvColumnNames[columnCount]).GetValue((csvWithDataVersion2)csvData, null);
+            }
+            return dataRow;
+        }
+
+        private DataRow getVersion1Row(IVersionAgnostic csvData, IList<string> csvColumnNames, DataRow dataRow)
+        {
+            for (int columnCount = 0; columnCount < csvColumnNames.Count; columnCount++)
+            {
+                dataRow[csvColumnNames[columnCount]] = new csvWithDataVersion1().GetType().GetProperty(csvColumnNames[columnCount]).GetValue((csvWithDataVersion1)csvData, null);
+            }
+            return dataRow;
         }
 
         private DataColumn[] getDataColumns(IList<string> csvColumnNames)

@@ -64,6 +64,8 @@
             this.DateGreaterThanThisDatePicker = new System.Windows.Forms.DateTimePicker();
             this.DateLessThanThisDatePicker = new System.Windows.Forms.DateTimePicker();
             this.TableRowCountTextBox = new System.Windows.Forms.TextBox();
+            this.version1RadioButton = new System.Windows.Forms.RadioButton();
+            this.version2RadioButton = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -145,7 +147,7 @@
             this.fileNameTextBox.Name = "fileNameTextBox";
             this.fileNameTextBox.Size = new System.Drawing.Size(100, 20);
             this.fileNameTextBox.TabIndex = 7;
-            this.fileNameTextBox.Text = "CsvData.csv";
+            this.fileNameTextBox.Text = "CsvData";
             // 
             // generateCsvFileButton
             // 
@@ -390,11 +392,38 @@
             this.TableRowCountTextBox.Text = "Row Count: 0";
             this.TableRowCountTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
+            // version1RadioButton
+            // 
+            this.version1RadioButton.AutoSize = true;
+            this.version1RadioButton.Checked = true;
+            this.version1RadioButton.Location = new System.Drawing.Point(761, 9);
+            this.version1RadioButton.Name = "version1RadioButton";
+            this.version1RadioButton.Size = new System.Drawing.Size(69, 17);
+            this.version1RadioButton.TabIndex = 38;
+            this.version1RadioButton.TabStop = true;
+            this.version1RadioButton.Text = "Version 1";
+            this.version1RadioButton.UseVisualStyleBackColor = true;
+            this.version1RadioButton.CheckedChanged += new System.EventHandler(this.version1RadioButton_CheckedChanged);
+            // 
+            // version2RadioButton
+            // 
+            this.version2RadioButton.AutoSize = true;
+            this.version2RadioButton.Location = new System.Drawing.Point(836, 9);
+            this.version2RadioButton.Name = "version2RadioButton";
+            this.version2RadioButton.Size = new System.Drawing.Size(69, 17);
+            this.version2RadioButton.TabIndex = 39;
+            this.version2RadioButton.TabStop = true;
+            this.version2RadioButton.Text = "Version 2";
+            this.version2RadioButton.UseVisualStyleBackColor = true;
+            this.version2RadioButton.Click += new System.EventHandler(this.version2RadioButton_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1225, 396);
+            this.Controls.Add(this.version2RadioButton);
+            this.Controls.Add(this.version1RadioButton);
             this.Controls.Add(this.TableRowCountTextBox);
             this.Controls.Add(this.DateLessThanThisDatePicker);
             this.Controls.Add(this.DateGreaterThanThisDatePicker);
@@ -477,6 +506,8 @@
         private System.Windows.Forms.DateTimePicker DateGreaterThanThisDatePicker;
         private System.Windows.Forms.DateTimePicker DateLessThanThisDatePicker;
         private System.Windows.Forms.TextBox TableRowCountTextBox;
+        private System.Windows.Forms.RadioButton version1RadioButton;
+        private System.Windows.Forms.RadioButton version2RadioButton;
     }
 }
 

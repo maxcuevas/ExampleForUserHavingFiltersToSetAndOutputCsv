@@ -6,9 +6,9 @@ namespace DogDataFilterToCsv.Models
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
 
-    [Table("csvWithData")]
-    public partial class csvWithData
+    public partial class csvWithDataVersion1 : IVersionAgnostic
     {
+        [DatabaseGenerated(DatabaseGeneratedOption.None)]
         public int id { get; set; }
 
         [Required]
@@ -29,5 +29,7 @@ namespace DogDataFilterToCsv.Models
 
         [Column(TypeName = "datetime2")]
         public DateTime time_stamp { get; set; }
+
+        public int only_in_version_1 { get; set; }
     }
 }

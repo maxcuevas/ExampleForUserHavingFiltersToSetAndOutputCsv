@@ -1,4 +1,5 @@
 ﻿using DogDataFilterApi.Models;
+using DogDataFilterToCsv.Models;
 using System;
 using System.Linq;
 
@@ -12,7 +13,7 @@ namespace DogDataFilterApi
 
         }
 
-        public IQueryable<csvWithData> tailHighFilter(IQueryable<csvWithData> csvTableData, LessThanAndGreaterThanStrings lessThanAndGreaterThanStrings)
+        public IQueryable<IVersionAgnostic> tailHighFilter(IQueryable<IVersionAgnostic> csvTableData, LessThanAndGreaterThanStrings lessThanAndGreaterThanStrings)
         {
             if (isValidData(lessThanAndGreaterThanStrings.lessThan, lessThanAndGreaterThanStrings.greaterThan))
             {
@@ -48,7 +49,7 @@ namespace DogDataFilterApi
             return !String.IsNullOrWhiteSpace(greaterThanString) && String.IsNullOrWhiteSpace(lessThanString);
         }
 
-        public IQueryable<csvWithData> tailLowFilter(IQueryable<csvWithData> csvTableData, LessThanAndGreaterThanStrings lessThanAndGreaterThanStrings)
+        public IQueryable<IVersionAgnostic> tailLowFilter(IQueryable<IVersionAgnostic> csvTableData, LessThanAndGreaterThanStrings lessThanAndGreaterThanStrings)
         {
             if (isValidData(lessThanAndGreaterThanStrings.lessThan, lessThanAndGreaterThanStrings.greaterThan))
             {
@@ -75,7 +76,7 @@ namespace DogDataFilterApi
             return csvTableData.Where(x => x.tail_low < tailLowToBelessThan && x.tail_low > TailLowToBeGreaterThan);
         }
 
-        public IQueryable<csvWithData> earHighFilter(IQueryable<csvWithData> csvTableData
+        public IQueryable<IVersionAgnostic> earHighFilter(IQueryable<IVersionAgnostic> csvTableData
             , LessThanAndGreaterThanStrings lessThanAndGreaterThanStrings)
         {
 
@@ -104,7 +105,7 @@ namespace DogDataFilterApi
             return csvTableData.Where(x => x.ear_high < earHighToBelessThan && x.ear_high > earHighToBeGreaterThan);
         }
 
-        public IQueryable<csvWithData> earLowFilter(IQueryable<csvWithData> csvTableData, LessThanAndGreaterThanStrings lessThanAndGreaterThanStrings)
+        public IQueryable<IVersionAgnostic> earLowFilter(IQueryable<IVersionAgnostic> csvTableData, LessThanAndGreaterThanStrings lessThanAndGreaterThanStrings)
         {
             if (isValidData(lessThanAndGreaterThanStrings.lessThan, lessThanAndGreaterThanStrings.greaterThan))
             {
@@ -131,7 +132,7 @@ namespace DogDataFilterApi
             return csvTableData.Where(x => x.ear_low < earLowToBelessThan && x.ear_low > earLowToBeGreaterThan);
         }
 
-        public IQueryable<csvWithData> noseHighFilter(IQueryable<csvWithData> csvTableData, LessThanAndGreaterThanStrings lessThanAndGreaterThanStrings)
+        public IQueryable<IVersionAgnostic> noseHighFilter(IQueryable<IVersionAgnostic> csvTableData, LessThanAndGreaterThanStrings lessThanAndGreaterThanStrings)
         {
             if (isValidData(lessThanAndGreaterThanStrings.lessThan, lessThanAndGreaterThanStrings.greaterThan))
             {
@@ -158,7 +159,7 @@ namespace DogDataFilterApi
             return csvTableData.Where(x => x.nose_high < noseHighToBelessThan && x.nose_high > noseHighToBeGreaterThan);
         }
 
-        public IQueryable<csvWithData> noseLowFilter(IQueryable<csvWithData> csvTableData, LessThanAndGreaterThanStrings lessThanAndGreaterThanStrings)
+        public IQueryable<IVersionAgnostic> noseLowFilter(IQueryable<IVersionAgnostic> csvTableData, LessThanAndGreaterThanStrings lessThanAndGreaterThanStrings)
         {
             if (isValidData(lessThanAndGreaterThanStrings.lessThan, lessThanAndGreaterThanStrings.greaterThan))
             {
@@ -185,7 +186,7 @@ namespace DogDataFilterApi
             return csvTableData.Where(x => x.nose_low < noseLowToBelessThan && x.nose_low > noseLowToBeGreaterThan);
         }
 
-        public IQueryable<csvWithData> DateFilter(IQueryable<csvWithData> csvTableData,
+        public IQueryable<IVersionAgnostic> DateFilter(IQueryable<IVersionAgnostic> csvTableData,
            DateAndTime dateAndTime)
         {
             if (dateAndTime.lessThanThis == null && dateAndTime.greaterThanThis == null)
@@ -211,7 +212,7 @@ namespace DogDataFilterApi
             return !Int32.TryParse(lessThanString, out int intToBelessThan) && !Int32.TryParse(greaterThanString, out int intToBeGreaterThan);
         }
 
-        public IQueryable<csvWithData> addNameFilter(IQueryable<csvWithData> csvTableData, string containsThisString)
+        public IQueryable<IVersionAgnostic> addNameFilter(IQueryable<IVersionAgnostic> csvTableData, string containsThisString)
         {
             if (String.IsNullOrWhiteSpace(containsThisString))
             {

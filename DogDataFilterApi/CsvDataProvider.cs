@@ -1,5 +1,6 @@
 ﻿using DogDataFilterApi;
 using DogDataFilterApi.Models;
+using DogDataFilterToCsv.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,19 +9,44 @@ namespace DogDataFilterApi
 {
     class CsvDataProvider
     {
-        public IList<string> getCsvColumnNames()
+        public IList<string> getCsvColumnNames(TableVersion.Value tableVersion)
         {
-            return typeof(csvWithData).GetProperties()
-                .Select(x => x.Name)
-                .ToList();
+            Type type;
+
+            if (tableVersion == TableVersion.Value.Version1)
+            {
+                type = typeof(csvWithDataVersion1);
+            }
+            else
+            {
+                type = typeof(csvWithDataVersion2);
+            }
+
+            return type.
+                    GetProperties().
+                    Select(x => x.Name).
+                    ToList();
+
         }
 
-        public IList<csvWithData> getCsvData(string searchName, Tail tail, Ear ear, Nose nose,
+        public IList<IVersionAgnostic> getCsvData(TableVersion.Value tableVersion, string searchName, Tail tail, Ear ear, Nose nose,
             DateAndTime dateAndTime)
         {
             var dbContext = new Model1();
             var builder = new Builder();
-            var csvData = dbContext.csvWithDatas.AsQueryable();
+
+
+            IQueryable<IVersionAgnostic> csvData = null;
+
+            if (tableVersion == TableVersion.Value.Version1)
+            {
+                csvData = dbContext.csvWithDataVersion1.AsQueryable();
+            }
+            else
+            {
+                csvData = dbContext.csvWithDataVersion2.AsQueryable();
+            }
+
             csvData = builder.addNameFilter(csvData, searchName);
             csvData = builder.tailHighFilter(csvData, tail.highData);
             csvData = builder.tailLowFilter(csvData, tail.lowData);

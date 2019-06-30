@@ -1,4 +1,4 @@
-namespace DogDataFilterApi.Models
+namespace DogDataFilterToCsv.Models
 {
     using System;
     using System.Data.Entity;
@@ -13,6 +13,8 @@ namespace DogDataFilterApi.Models
         }
 
         public virtual DbSet<csvWithData> csvWithDatas { get; set; }
+        public virtual DbSet<csvWithDataVersion1> csvWithDataVersion1 { get; set; }
+        public virtual DbSet<csvWithDataVersion2> csvWithDataVersion2 { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

@@ -1,4 +1,5 @@
-﻿using DogDataFilterApi.Models;
+﻿using DogDataFilterApi;
+using DogDataFilterApi.Models;
 using System;
 using System.Drawing;
 using System.Windows.Forms;
@@ -19,8 +20,8 @@ namespace DogDataFilterToCsv
 
         private void getDataGridViewData()
         {
-            var dogDataFilterApi = new DogDataFilterApi.Api();
-            dataGridView1.DataSource = dogDataFilterApi.getDataTable(searchNameTextBox.Text,
+            var dogDataFilterApi = new Api();
+            dataGridView1.DataSource = dogDataFilterApi.getDataTable(getTableVersionSelected(), searchNameTextBox.Text,
                             getTailData(),
                             getEarData(),
                             getNoseData(),
@@ -28,10 +29,25 @@ namespace DogDataFilterToCsv
             TableRowCountTextBox.Text = "Row Count: " + dataGridView1.RowCount.ToString();
         }
 
+        private TableVersion.Value getTableVersionSelected()
+        {
+            return version1RadioButton.Checked ? TableVersion.Value.Version1 : TableVersion.Value.Version2;
+        }
+
         private void generateCsvFileButton_Click(object sender, EventArgs e)
         {
-            var dogDataFilterApi = new DogDataFilterApi.Api();
-            dogDataFilterApi.generateCsv(fileNameTextBox.Text,
+            var dogDataFilterApi = new Api();
+            const string versionString = "_Version";
+            const string extension = ".csv";
+
+            dogDataFilterApi.generateCsv(TableVersion.Value.Version1, fileNameTextBox.Text + versionString + "1" + extension,
+                searchNameTextBox.Text,
+                getTailData(),
+                getEarData(),
+                getNoseData(),
+                getDateAndTimeData());
+
+            dogDataFilterApi.generateCsv(TableVersion.Value.Version2, fileNameTextBox.Text + versionString + "2" + extension,
                 searchNameTextBox.Text,
                 getTailData(),
                 getEarData(),
@@ -164,6 +180,16 @@ namespace DogDataFilterToCsv
         }
 
         private void DateGreaterThanThisDatePicker_ValueChanged(object sender, EventArgs e)
+        {
+            refreshDataGridViewData(true);
+        }
+
+        private void version2RadioButton_Click(object sender, EventArgs e)
+        {
+            refreshDataGridViewData(true);
+        }
+
+        private void version1RadioButton_CheckedChanged(object sender, EventArgs e)
         {
             refreshDataGridViewData(true);
         }

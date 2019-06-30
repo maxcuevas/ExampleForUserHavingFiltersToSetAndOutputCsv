@@ -1,4 +1,5 @@
 ﻿using DogDataFilterApi.Models;
+using DogDataFilterToCsv.Models;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -18,28 +19,30 @@ namespace DogDataFilterApi
             csvDataToCsvTransformer = new CsvDataToCsvTransformer();
         }
 
-        public DataTable getDataTable(string searchName, Tail tail, Ear ear, Nose nose,
+        public DataTable getDataTable(TableVersion.Value tableVersion, string searchName, Tail tail, Ear ear, Nose nose,
                              DateAndTime dateAndTime)
         {
             return dataTableFactory.getDataTable(
-                getCsvData(searchName, tail, ear, nose, dateAndTime),
-                csvDataProvider.getCsvColumnNames());
+                tableVersion,
+                getCsvData(tableVersion, searchName, tail, ear, nose, dateAndTime),
+                csvDataProvider.getCsvColumnNames(tableVersion));
         }
 
-        public void generateCsv(string fileName, string searchName, Tail tail, Ear ear, Nose nose,
+        public void generateCsv(TableVersion.Value tableVersion, string fileName, string searchName, Tail tail, Ear ear, Nose nose,
                              DateAndTime dateAndTime)
         {
             csvDataToCsvTransformer.writeDataToCsv(
-                getCsvData(searchName, tail, ear, nose, dateAndTime),
+                tableVersion,
+                getCsvData(tableVersion, searchName, tail, ear, nose, dateAndTime),
                 fileName,
-                csvDataProvider.getCsvColumnNames());
+                csvDataProvider.getCsvColumnNames(tableVersion));
         }
 
 
-        private IList<csvWithData> getCsvData(string searchName, Tail tail, Ear ear, Nose nose,
+        private IList<IVersionAgnostic> getCsvData(TableVersion.Value tableVersion, string searchName, Tail tail, Ear ear, Nose nose,
                              DateAndTime dateAndTime)
         {
-            return csvDataProvider.getCsvData(searchName, tail, ear, nose,
+            return csvDataProvider.getCsvData(tableVersion, searchName, tail, ear, nose,
                              dateAndTime);
         }
     }
