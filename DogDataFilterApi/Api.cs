@@ -14,9 +14,9 @@ namespace DogDataFilterApi
 
         public Api()
         {
-            dataTableFactory = new DataTableFactory();
+            dataTableFactory = new DataTableFactory(new CsvWithDataVersionPropertyValueService());
             csvDataProvider = new CsvDataProvider();
-            csvDataToCsvTransformer = new CsvDataToCsvTransformer();
+            csvDataToCsvTransformer = new CsvDataToCsvTransformer(new CsvWithDataVersionPropertyValueService());
         }
 
         public DataTable getDataTable(TableVersion.Value tableVersion, string searchName, Tail tail, Ear ear, Nose nose,

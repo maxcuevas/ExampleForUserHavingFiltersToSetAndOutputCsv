@@ -1,5 +1,6 @@
 ﻿using DogDataFilterApi.Models;
 using DogDataFilterToCsv.Models;
+using DogDataFilterToCsv.Models.Generated;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -9,6 +10,13 @@ namespace DogDataFilterApi
 {
     class CsvDataToCsvTransformer
     {
+        CsvWithDataVersionPropertyValueService csvWithDataVersionPropertyValueService;
+
+        public CsvDataToCsvTransformer(CsvWithDataVersionPropertyValueService csvWithDataVersionPropertyValueService)
+        {
+            this.csvWithDataVersionPropertyValueService = csvWithDataVersionPropertyValueService;
+        }
+
         public void writeDataToCsv(TableVersion.Value tableVersion, IList<IVersionAgnostic> csvDataList, string fileName, IList<string> columnNames)
         {
             var streamWriter = new StreamWriter(fileName);
@@ -36,7 +44,7 @@ namespace DogDataFilterApi
                 var csvDataList = new List<string>();
                 for (int columnCount = 0; columnCount < csvColumnNames.Count; columnCount++)
                 {
-                    csvDataList.Add(new csvWithDataVersion1().GetType().GetProperty(csvColumnNames[columnCount]).GetValue((csvWithDataVersion1)csvData, null).ToString());
+                    csvDataList.Add(csvWithDataVersionPropertyValueService.version1(csvData, csvColumnNames[columnCount]).ToString());
                 }
                 return String.Join(",", csvDataList);
             }
@@ -45,12 +53,13 @@ namespace DogDataFilterApi
                 var csvDataList = new List<string>();
                 for (int columnCount = 0; columnCount < csvColumnNames.Count; columnCount++)
                 {
-                    csvDataList.Add(new csvWithDataVersion2().GetType().GetProperty(csvColumnNames[columnCount]).GetValue((csvWithDataVersion2)csvData, null).ToString());
+                    csvDataList.Add(csvWithDataVersionPropertyValueService.version2(csvData, csvColumnNames[columnCount]).ToString());
                 }
                 return String.Join(",", csvDataList);
             }
 
         }
+
 
     }
 }

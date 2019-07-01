@@ -1,6 +1,7 @@
 ﻿using DogDataFilterApi;
 using DogDataFilterApi.Models;
 using DogDataFilterToCsv.Models;
+using DogDataFilterToCsv.Models.Generated;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -34,7 +35,6 @@ namespace DogDataFilterApi
         {
             var dbContext = new Model1();
             var builder = new Builder();
-
 
             IQueryable<IVersionAgnostic> csvData = null;
 

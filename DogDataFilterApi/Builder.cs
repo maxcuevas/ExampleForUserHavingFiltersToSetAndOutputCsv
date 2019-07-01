@@ -7,7 +7,6 @@ namespace DogDataFilterApi
 {
     class Builder
     {
-
         public Builder()
         {
 
