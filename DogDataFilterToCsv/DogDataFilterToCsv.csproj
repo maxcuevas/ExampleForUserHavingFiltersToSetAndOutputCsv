@@ -33,8 +33,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="DogDataFilterApi">
-      <HintPath>..\DogDataFilterApi\bin\Debug\netstandard2.0\DogDataFilterApi.dll</HintPath>
+    <Reference Include="DogDataFilterApi1">
+      <HintPath>..\DogDataFilterApi1\bin\Debug\DogDataFilterApi1.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>

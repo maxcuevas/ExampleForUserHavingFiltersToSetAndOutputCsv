@@ -66,6 +66,14 @@
             this.TableRowCountTextBox = new System.Windows.Forms.TextBox();
             this.version1RadioButton = new System.Windows.Forms.RadioButton();
             this.version2RadioButton = new System.Windows.Forms.RadioButton();
+            this.distanceFromLatitudeTextBox = new System.Windows.Forms.TextBox();
+            this.distanceFromLatitudeLabel = new System.Windows.Forms.Label();
+            this.latitudeLabel = new System.Windows.Forms.Label();
+            this.latitudeTextBox = new System.Windows.Forms.TextBox();
+            this.longitudeTextBox = new System.Windows.Forms.TextBox();
+            this.longitudeLabel = new System.Windows.Forms.Label();
+            this.distanceFromLongitudeTextBox = new System.Windows.Forms.TextBox();
+            this.distanceFromLongitudeLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -350,7 +358,7 @@
             // DateLessThanThisLabel
             // 
             this.DateLessThanThisLabel.AutoSize = true;
-            this.DateLessThanThisLabel.Location = new System.Drawing.Point(7, 247);
+            this.DateLessThanThisLabel.Location = new System.Drawing.Point(8, 322);
             this.DateLessThanThisLabel.Name = "DateLessThanThisLabel";
             this.DateLessThanThisLabel.Size = new System.Drawing.Size(112, 13);
             this.DateLessThanThisLabel.TabIndex = 33;
@@ -359,7 +367,7 @@
             // DateGreaterThanThisLabel
             // 
             this.DateGreaterThanThisLabel.AutoSize = true;
-            this.DateGreaterThanThisLabel.Location = new System.Drawing.Point(7, 227);
+            this.DateGreaterThanThisLabel.Location = new System.Drawing.Point(8, 302);
             this.DateGreaterThanThisLabel.Name = "DateGreaterThanThisLabel";
             this.DateGreaterThanThisLabel.Size = new System.Drawing.Size(125, 13);
             this.DateGreaterThanThisLabel.TabIndex = 32;
@@ -367,7 +375,7 @@
             // 
             // DateGreaterThanThisDatePicker
             // 
-            this.DateGreaterThanThisDatePicker.Location = new System.Drawing.Point(138, 221);
+            this.DateGreaterThanThisDatePicker.Location = new System.Drawing.Point(139, 296);
             this.DateGreaterThanThisDatePicker.Name = "DateGreaterThanThisDatePicker";
             this.DateGreaterThanThisDatePicker.Size = new System.Drawing.Size(200, 20);
             this.DateGreaterThanThisDatePicker.TabIndex = 35;
@@ -375,7 +383,7 @@
             // 
             // DateLessThanThisDatePicker
             // 
-            this.DateLessThanThisDatePicker.Location = new System.Drawing.Point(138, 247);
+            this.DateLessThanThisDatePicker.Location = new System.Drawing.Point(139, 322);
             this.DateLessThanThisDatePicker.Name = "DateLessThanThisDatePicker";
             this.DateLessThanThisDatePicker.Size = new System.Drawing.Size(200, 20);
             this.DateLessThanThisDatePicker.TabIndex = 36;
@@ -417,11 +425,87 @@
             this.version2RadioButton.UseVisualStyleBackColor = true;
             this.version2RadioButton.Click += new System.EventHandler(this.version2RadioButton_Click);
             // 
+            // distanceFromLatitudeTextBox
+            // 
+            this.distanceFromLatitudeTextBox.Location = new System.Drawing.Point(425, 213);
+            this.distanceFromLatitudeTextBox.Name = "distanceFromLatitudeTextBox";
+            this.distanceFromLatitudeTextBox.Size = new System.Drawing.Size(100, 20);
+            this.distanceFromLatitudeTextBox.TabIndex = 43;
+            this.distanceFromLatitudeTextBox.TextChanged += new System.EventHandler(this.distanceFromLatitudeTextBox_TextChanged);
+            // 
+            // distanceFromLatitudeLabel
+            // 
+            this.distanceFromLatitudeLabel.AutoSize = true;
+            this.distanceFromLatitudeLabel.Location = new System.Drawing.Point(270, 216);
+            this.distanceFromLatitudeLabel.Name = "distanceFromLatitudeLabel";
+            this.distanceFromLatitudeLabel.Size = new System.Drawing.Size(140, 13);
+            this.distanceFromLatitudeLabel.TabIndex = 42;
+            this.distanceFromLatitudeLabel.Text = "Distance from Latitude Point";
+            // 
+            // latitudeLabel
+            // 
+            this.latitudeLabel.AutoSize = true;
+            this.latitudeLabel.Location = new System.Drawing.Point(6, 216);
+            this.latitudeLabel.Name = "latitudeLabel";
+            this.latitudeLabel.Size = new System.Drawing.Size(45, 13);
+            this.latitudeLabel.TabIndex = 41;
+            this.latitudeLabel.Text = "Latitude";
+            // 
+            // latitudeTextBox
+            // 
+            this.latitudeTextBox.Location = new System.Drawing.Point(164, 213);
+            this.latitudeTextBox.Name = "latitudeTextBox";
+            this.latitudeTextBox.Size = new System.Drawing.Size(100, 20);
+            this.latitudeTextBox.TabIndex = 40;
+            this.latitudeTextBox.TextChanged += new System.EventHandler(this.latitudeTextBox_TextChanged);
+            // 
+            // longitudeTextBox
+            // 
+            this.longitudeTextBox.Location = new System.Drawing.Point(164, 239);
+            this.longitudeTextBox.Name = "longitudeTextBox";
+            this.longitudeTextBox.Size = new System.Drawing.Size(100, 20);
+            this.longitudeTextBox.TabIndex = 45;
+            this.longitudeTextBox.TextChanged += new System.EventHandler(this.longitudeTextBox_TextChanged);
+            // 
+            // longitudeLabel
+            // 
+            this.longitudeLabel.AutoSize = true;
+            this.longitudeLabel.Location = new System.Drawing.Point(7, 242);
+            this.longitudeLabel.Name = "longitudeLabel";
+            this.longitudeLabel.Size = new System.Drawing.Size(54, 13);
+            this.longitudeLabel.TabIndex = 44;
+            this.longitudeLabel.Text = "Longitude";
+            // 
+            // distanceFromLongitudeTextBox
+            // 
+            this.distanceFromLongitudeTextBox.Location = new System.Drawing.Point(425, 239);
+            this.distanceFromLongitudeTextBox.Name = "distanceFromLongitudeTextBox";
+            this.distanceFromLongitudeTextBox.Size = new System.Drawing.Size(100, 20);
+            this.distanceFromLongitudeTextBox.TabIndex = 46;
+            this.distanceFromLongitudeTextBox.TextChanged += new System.EventHandler(this.distanceFromLongitudeTextBox_TextChanged);
+            // 
+            // distanceFromLongitudeLabel
+            // 
+            this.distanceFromLongitudeLabel.AutoSize = true;
+            this.distanceFromLongitudeLabel.Location = new System.Drawing.Point(270, 242);
+            this.distanceFromLongitudeLabel.Name = "distanceFromLongitudeLabel";
+            this.distanceFromLongitudeLabel.Size = new System.Drawing.Size(149, 13);
+            this.distanceFromLongitudeLabel.TabIndex = 47;
+            this.distanceFromLongitudeLabel.Text = "Distance from Longitude Point";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1225, 396);
+            this.Controls.Add(this.distanceFromLongitudeLabel);
+            this.Controls.Add(this.distanceFromLongitudeTextBox);
+            this.Controls.Add(this.longitudeTextBox);
+            this.Controls.Add(this.longitudeLabel);
+            this.Controls.Add(this.distanceFromLatitudeTextBox);
+            this.Controls.Add(this.distanceFromLatitudeLabel);
+            this.Controls.Add(this.latitudeLabel);
+            this.Controls.Add(this.latitudeTextBox);
             this.Controls.Add(this.version2RadioButton);
             this.Controls.Add(this.version1RadioButton);
             this.Controls.Add(this.TableRowCountTextBox);
@@ -508,6 +592,14 @@
         private System.Windows.Forms.TextBox TableRowCountTextBox;
         private System.Windows.Forms.RadioButton version1RadioButton;
         private System.Windows.Forms.RadioButton version2RadioButton;
+        private System.Windows.Forms.TextBox distanceFromLatitudeTextBox;
+        private System.Windows.Forms.Label distanceFromLatitudeLabel;
+        private System.Windows.Forms.Label latitudeLabel;
+        private System.Windows.Forms.TextBox latitudeTextBox;
+        private System.Windows.Forms.TextBox longitudeTextBox;
+        private System.Windows.Forms.Label longitudeLabel;
+        private System.Windows.Forms.TextBox distanceFromLongitudeTextBox;
+        private System.Windows.Forms.Label distanceFromLongitudeLabel;
     }
 }
 

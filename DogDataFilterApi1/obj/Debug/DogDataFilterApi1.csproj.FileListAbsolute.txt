@@ -1,0 +1,11 @@
+C:\Workspace\ExampleForUserHavingFiltersToSetAndOutputCsv\DogDataFilterApi1\bin\Debug\DogDataFilterApi1.dll.config
+C:\Workspace\ExampleForUserHavingFiltersToSetAndOutputCsv\DogDataFilterApi1\bin\Debug\DogDataFilterApi1.dll
+C:\Workspace\ExampleForUserHavingFiltersToSetAndOutputCsv\DogDataFilterApi1\bin\Debug\DogDataFilterApi1.pdb
+C:\Workspace\ExampleForUserHavingFiltersToSetAndOutputCsv\DogDataFilterApi1\bin\Debug\EntityFramework.dll
+C:\Workspace\ExampleForUserHavingFiltersToSetAndOutputCsv\DogDataFilterApi1\bin\Debug\EntityFramework.SqlServer.dll
+C:\Workspace\ExampleForUserHavingFiltersToSetAndOutputCsv\DogDataFilterApi1\bin\Debug\EntityFramework.xml
+C:\Workspace\ExampleForUserHavingFiltersToSetAndOutputCsv\DogDataFilterApi1\bin\Debug\EntityFramework.SqlServer.xml
+C:\Workspace\ExampleForUserHavingFiltersToSetAndOutputCsv\DogDataFilterApi1\obj\Debug\DogDataFilterApi1.csproj.CoreCompileInputs.cache
+C:\Workspace\ExampleForUserHavingFiltersToSetAndOutputCsv\DogDataFilterApi1\obj\Debug\DogDataFilterApi1.csproj.CopyComplete
+C:\Workspace\ExampleForUserHavingFiltersToSetAndOutputCsv\DogDataFilterApi1\obj\Debug\DogDataFilterApi1.dll
+C:\Workspace\ExampleForUserHavingFiltersToSetAndOutputCsv\DogDataFilterApi1\obj\Debug\DogDataFilterApi1.pdb
