@@ -1,5 +1,4 @@
-﻿using DogDataFilterApi.Models;
-using DogDataFilterToCsv.Models;
+﻿using DogDataFilterToCsv.Models;
 using System.Collections.Generic;
 using System.Data;
 
@@ -16,13 +15,40 @@ namespace DogDataFilterApi
 
         public DataTable getDataTable(TableVersion.Value tableVersion, IList<IVersionAgnostic> csvDataList, IList<string> csvColumnNames)
         {
-            DataTable dataTable = new DataTable();
+            var dataTable = new DataTable();
             dataTable.Columns.AddRange(getDataColumns(csvColumnNames));
+
             for (int rowCount = 0; rowCount < csvDataList.Count; rowCount++)
             {
                 dataTable.Rows.Add(getRow(tableVersion, csvDataList[rowCount], csvColumnNames, dataTable));
             }
-            return dataTable;
+
+            return getDataTableWithCorrectDataTypesForColumns(dataTable);
+        }
+
+        private DataTable getDataTableWithCorrectDataTypesForColumns(DataTable dataTable)
+        {
+            var clonedDataTable = dataTable.Clone();
+
+            if (dataTable.Rows.Count > 0)
+            {
+                var rowOfData = dataTable.Rows[0];
+
+                for (int columnIndex = 0; columnIndex < dataTable.Columns.Count; columnIndex++)
+                {
+                    if (double.TryParse(rowOfData[columnIndex].ToString(), out double tempValue))
+                    {
+                        clonedDataTable.Columns[columnIndex].DataType = typeof(double);
+                    }
+                }
+            }
+
+            foreach (DataRow row in dataTable.Rows)
+            {
+                clonedDataTable.ImportRow(row);
+            }
+
+            return clonedDataTable;
         }
 
         private DataRow getRow(TableVersion.Value tableVersion, IVersionAgnostic csvData, IList<string> csvColumnNames, DataTable dataTable)
@@ -30,7 +56,7 @@ namespace DogDataFilterApi
             var dataRow = dataTable.NewRow();
             if (tableVersion == TableVersion.Value.Version1)
             {
-               return getVersion1Row(csvData, csvColumnNames, dataRow);
+                return getVersion1Row(csvData, csvColumnNames, dataRow);
             }
 
             return getVersion2Row(csvData, csvColumnNames, dataRow);
@@ -40,7 +66,7 @@ namespace DogDataFilterApi
         {
             for (int columnCount = 0; columnCount < csvColumnNames.Count; columnCount++)
             {
-                dataRow[csvColumnNames[columnCount]] = csvWithDataVersionPropertyValueService.version2(csvData, csvColumnNames[columnCount]); 
+                dataRow[csvColumnNames[columnCount]] = csvWithDataVersionPropertyValueService.version2(csvData, csvColumnNames[columnCount]);
             }
             return dataRow;
         }

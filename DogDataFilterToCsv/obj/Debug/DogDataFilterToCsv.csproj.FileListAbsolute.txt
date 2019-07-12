@@ -13,6 +13,7 @@ C:\Workspace\DogDataFilterToCsv\DogDataFilterToCsv\obj\Debug\DogDataFilterToCsv.
 C:\Workspace\DogDataFilterToCsv\DogDataFilterToCsv\obj\Debug\DogDataFilterToCsv.csproj.CopyComplete
 C:\Workspace\DogDataFilterToCsv\DogDataFilterToCsv\obj\Debug\DogDataFilterToCsv.exe
 C:\Workspace\DogDataFilterToCsv\DogDataFilterToCsv\obj\Debug\DogDataFilterToCsv.pdb
+C:\Workspace\ExampleForUserHavingFiltersToSetAndOutputCsv\DogDataFilterToCsv\obj\Debug\DogDataFilterToCsv.csprojAssemblyReference.cache
 C:\Workspace\ExampleForUserHavingFiltersToSetAndOutputCsv\DogDataFilterToCsv\obj\Debug\DogDataFilterToCsv.Form1.resources
 C:\Workspace\ExampleForUserHavingFiltersToSetAndOutputCsv\DogDataFilterToCsv\obj\Debug\DogDataFilterToCsv.Properties.Resources.resources
 C:\Workspace\ExampleForUserHavingFiltersToSetAndOutputCsv\DogDataFilterToCsv\obj\Debug\DogDataFilterToCsv.csproj.GenerateResource.cache
@@ -27,7 +28,6 @@ C:\Workspace\ExampleForUserHavingFiltersToSetAndOutputCsv\DogDataFilterToCsv\bin
 C:\Workspace\ExampleForUserHavingFiltersToSetAndOutputCsv\DogDataFilterToCsv\bin\Debug\DogDataFilterApi1.dll.config
 C:\Workspace\ExampleForUserHavingFiltersToSetAndOutputCsv\DogDataFilterToCsv\bin\Debug\EntityFramework.xml
 C:\Workspace\ExampleForUserHavingFiltersToSetAndOutputCsv\DogDataFilterToCsv\bin\Debug\EntityFramework.SqlServer.xml
-C:\Workspace\ExampleForUserHavingFiltersToSetAndOutputCsv\DogDataFilterToCsv\obj\Debug\DogDataFilterToCsv.csprojAssemblyReference.cache
 C:\Workspace\ExampleForUserHavingFiltersToSetAndOutputCsv\DogDataFilterToCsv\obj\Debug\DogDataFilterToCsv.csproj.CopyComplete
 C:\Workspace\ExampleForUserHavingFiltersToSetAndOutputCsv\DogDataFilterToCsv\obj\Debug\DogDataFilterToCsv.exe
 C:\Workspace\ExampleForUserHavingFiltersToSetAndOutputCsv\DogDataFilterToCsv\obj\Debug\DogDataFilterToCsv.pdb
